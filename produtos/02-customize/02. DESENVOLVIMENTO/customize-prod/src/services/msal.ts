@@ -6,7 +6,7 @@ export const msalConfig = {
     authority: `https://login.microsoftonline.com/${
       process.env.AZURE_AD_TENANT_ID || ''
     }`,
-    redirectUri: 'https://customize.tpfe.com.br/start',
+    redirectUri: 'https://customize.tpfe.com.br',
     scopes: ['User.Read', 'User.ReadWrite.All'],
   },
   cache: {

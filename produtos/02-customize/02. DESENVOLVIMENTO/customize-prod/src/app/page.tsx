@@ -37,9 +37,9 @@ export default function Home() {
               workPhone: '',
               workPhoneExtension: '',
             })
+            router.push('/start')
           })
         })
-        router.push('/start')
       } else {
         instance.initialize().catch(() => {
           instance.acquireTokenSilent(request).then(async (response) => {
@@ -63,7 +63,7 @@ export default function Home() {
     if (!accounts[0]) {
       handleLogin()
     }
-    handleLogin()
+    router.push('/')
   }, [accounts])
 
   return (
