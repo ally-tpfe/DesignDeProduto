@@ -3,8 +3,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="MailApp">
-  <Id>{EB0B58BF-3BBF-4174-9343-FB85437E0F47}</Id>
-  <Version>1.1</Version>
+  <Id>{AE430252-DC12-41FA-BF5A-031C9873AEB8}</Id>
+  <Version>1.0</Version>
   <ProviderName>TPF Engenharia</ProviderName>
   <DefaultLocale>pt-br</DefaultLocale>
   <DisplayName DefaultValue="Customize"/>
