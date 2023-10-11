@@ -18,8 +18,10 @@ export default function StartApp() {
   }
 
   useEffect(() => {
-    if (!accounts[0]) {
-      handleLogin()
+    window.onload = () => {
+      if (!accounts[0]) {
+        handleLogin()
+      }
     }
   })
 
