@@ -9,8 +9,8 @@
   <DefaultLocale>pt-br</DefaultLocale>
   <DisplayName DefaultValue="Customize Add-in"/>
   <Description DefaultValue="Torne seu e-mail mais confiável de forma rápida e simples"/>
-  <IconUrl DefaultValue="https://tpfengenharia.github.io/DevDesign/01.%20PROJETOS/02.%20GERADOR%20DE%20ARQUIVOS/02.%20DESENVOLVIMENTO/customize-outlook-addin/assets/logo-customize-sm.png"/>
-  <HighResolutionIconUrl DefaultValue="https://tpfengenharia.github.io/DevDesign/01.%20PROJETOS/02.%20GERADOR%20DE%20ARQUIVOS/02.%20DESENVOLVIMENTO/customize-outlook-addin/assets/logo-customize-sm.png"/>
+  <IconUrl DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/assets/logo-customize-sm.png"/>
+  <HighResolutionIconUrl DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/assets/logo-customize-sm.png"/>
   <SupportUrl DefaultValue="https://www.customize.tpfe.com.br/ajuda"/>
   <AppDomains>
     <AppDomain>https://tpfengenharia.github.io/</AppDomain>
@@ -29,7 +29,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://tpfengenharia.github.io/DevDesign/01.%20PROJETOS/02.%20GERADOR%20DE%20ARQUIVOS/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/taskpane/HTML/editsignature.html"/>
+        <SourceLocation DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/taskpane/HTML/editsignature.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -122,12 +122,12 @@
       </Hosts>
       <Resources>
         <bt:Images>
-          <bt:Image id="Icon16x16" DefaultValue="https://tpfengenharia.github.io/DevDesign/01.%20PROJETOS/02.%20GERADOR%20DE%20ARQUIVOS/02.%20DESENVOLVIMENTO/customize-outlook-addin/assets/logo-customize-sm.png"></bt:Image>
+          <bt:Image id="Icon16x16" DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/assets/logo-customize-sm.png"></bt:Image>
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="residUrl0" DefaultValue="https://tpfengenharia.github.io/DevDesign/01.%20PROJETOS/02.%20GERADOR%20DE%20ARQUIVOS/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/taskpane/HTML/editsignature.html"></bt:Url>
-          <bt:Url id="Autorun" DefaultValue="https://tpfengenharia.github.io/DevDesign/01.%20PROJETOS/02.%20GERADOR%20DE%20ARQUIVOS/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/runtime/HTML/autorunweb.html"></bt:Url>
-          <bt:Url id="runtimeJs" DefaultValue="https://tpfengenharia.github.io/DevDesign/01.%20PROJETOS/02.%20GERADOR%20DE%20ARQUIVOS/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/runtime/Js/autorunshared.js"></bt:Url>
+          <bt:Url id="residUrl0" DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/taskpane/HTML/editsignature.html"></bt:Url>
+          <bt:Url id="Autorun" DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/runtime/HTML/autorunweb.html"></bt:Url>
+          <bt:Url id="runtimeJs" DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/runtime/Js/autorunshared.js"></bt:Url>
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="residGL0" DefaultValue="Customize"></bt:String>
