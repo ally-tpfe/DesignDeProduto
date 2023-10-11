@@ -1,0 +1,38 @@
+<mxfile host="Electron" modified="2023-08-07T18:53:17.048Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="16SSwVMfZ2OHR22rseYy" version="21.6.5" type="device">
+  <diagram name="Página-1" id="yJ6WDDQ8qH0IbtRZHyPi">
+    <mxGraphModel dx="1036" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IlMcHz5qWKoJcGcjknBI-1" value="BAIXAR TELA DE FUNDO" style="swimlane;startSize=20;horizontal=1;containerType=tree;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="1" vertex="1">
+          <mxGeometry x="24" y="40" width="780" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="IlMcHz5qWKoJcGcjknBI-8" value="Home" style="rounded=1;whiteSpace=wrap;html=1;" parent="IlMcHz5qWKoJcGcjknBI-1" vertex="1">
+          <mxGeometry x="60" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IlMcHz5qWKoJcGcjknBI-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IlMcHz5qWKoJcGcjknBI-1" source="IlMcHz5qWKoJcGcjknBI-8" target="IlMcHz5qWKoJcGcjknBI-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IlMcHz5qWKoJcGcjknBI-10" value="Tela de Fundo" style="rounded=1;whiteSpace=wrap;html=1;" parent="IlMcHz5qWKoJcGcjknBI-1" vertex="1">
+          <mxGeometry x="260" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IlMcHz5qWKoJcGcjknBI-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IlMcHz5qWKoJcGcjknBI-1" source="IlMcHz5qWKoJcGcjknBI-10" target="IlMcHz5qWKoJcGcjknBI-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="204" y="250" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IlMcHz5qWKoJcGcjknBI-16" value="Acessar galeria" style="rounded=1;whiteSpace=wrap;html=1;" parent="IlMcHz5qWKoJcGcjknBI-1" vertex="1">
+          <mxGeometry x="430" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IlMcHz5qWKoJcGcjknBI-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="IlMcHz5qWKoJcGcjknBI-1" source="IlMcHz5qWKoJcGcjknBI-16" target="IlMcHz5qWKoJcGcjknBI-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="404" y="250" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IlMcHz5qWKoJcGcjknBI-18" value="Baixar tela de fundo" style="rounded=1;whiteSpace=wrap;html=1;" parent="IlMcHz5qWKoJcGcjknBI-1" vertex="1">
+          <mxGeometry x="600" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

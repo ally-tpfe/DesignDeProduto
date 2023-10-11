@@ -1,0 +1,91 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  relationMode      = "prisma"
+}
+
+model User {
+  id    String @id @default(uuid())
+  name  String
+  email String @unique
+
+  @@fulltext([name, email])
+  @@map("dd_users")
+}
+
+model Softwares {
+  id               String @id @default(uuid())
+  id_sgp           String
+  nf               String
+  tipo_de_registro String
+  tipo_de_licenca  String
+
+  pacote                String
+  software              String
+  responsavel           String
+  fornecedor            String
+  contato_do_fornecedor String
+
+  centro_de_custo      String
+  forma_de_pagamento   String
+  moeda_de_pagamento   String
+  valor_moeda_original Float
+  valor_reais          Float
+  quantidade           Int
+
+  data_de_inicio  DateTime
+  data_de_termino DateTime
+  observacoes     String
+  categoria       String
+
+  @@map("dd_softwares")
+}
+
+model Licenses {
+  id          String @id @default(uuid())
+  software    String
+  categoria   String
+  chave       String
+  usuario     String
+  gerente     String
+  produto     String
+  observacoes String @default("")
+
+  @@map("dd_licenses")
+}
+
+model Panels {
+  id         String @id @default(uuid())
+  software   String
+  fornecedor String
+  plataforma String
+  usuario    String
+  senha      String
+
+  @@map("dd_panels")
+}
+
+// create a schema for data changes
+
+model Logs {
+  id          String @id @default(uuid())
+  user        String
+  table       String
+  action      String
+  localizator String
+
+  item       String
+  timestamp  DateTime @default(now())
+  softwareId String   @default("")
+
+  @@map("dd_logs")
+}

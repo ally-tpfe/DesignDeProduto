@@ -1,0 +1,4 @@
+database: tpfe
+username: ja44ld58faegoxerxcx8
+host: aws.connect.psdb.cloud
+password: pscale_pw_dV8xHsgrIlenZEgUB7FtNRUi8HZakOTIErv3f4giH8V

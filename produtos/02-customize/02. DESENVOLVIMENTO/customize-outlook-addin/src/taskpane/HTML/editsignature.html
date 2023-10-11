@@ -1,0 +1,40 @@
+<!-- Copyright (c) Microsoft Corporation.
+     Licensed under the MIT License. -->
+     
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Signature Data Form</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="../CSS/editsignature.css" rel="stylesheet" type="text/css" media="all" />
+  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="../../utilities.js"></script>
+  <script type="text/javascript" src="../Js/taskpane_render.js"></script>  
+</head>
+
+<body>  
+  <div class="container">
+    <img class="customize-logo" src="../../../assets/logo-customize.png" alt="" />
+
+
+    <div class="buttons_container">
+      <button id="next_button_t1" class="registerbtn" onclick="create_user_info()">Gerenciar assinatura</button>
+      
+    <div style="width:63%;background-color: white;height: 1px;opacity: 0.4; margin: 0.5rem 0 2rem 0;"></div>
+    
+    <p class="info_text">Deseja resetar todas as configurações da sua assinatura?</p>
+      <button id="reset_all_config_btn" class="registerbtn" onclick="reset_all_configuration()">Resetar configurações</button>
+    </div>
+
+
+
+    <p id="message"></p>
+    <a id="link" href="https://www.customize.tpfe.com.br/start/signature" target="_blank" rel="noopener"></a>                    
+
+  </div>
+
+</body>
+
+</html>
