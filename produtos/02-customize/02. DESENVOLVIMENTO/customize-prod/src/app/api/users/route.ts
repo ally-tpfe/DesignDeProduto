@@ -42,6 +42,7 @@ export async function GET(request: NextRequest) {
       })
     }
   } catch (error) {
+    console.log(error)
     return new Response(JSON.stringify('Erro interno do servidor'), {
       status: 500, // Código de status de erro interno do servidor
       headers: {
