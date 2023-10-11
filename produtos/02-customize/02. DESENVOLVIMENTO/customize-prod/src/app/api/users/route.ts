@@ -53,5 +53,5 @@ export async function GET(request: NextRequest) {
 }
 
 function isValidApiKey(apiKey: string) {
-  return apiKey === process.env.API_KEY
+  return apiKey === 'eba33af7-acac-4207-b4f5-b0ea78be9c2b'
 }

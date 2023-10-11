@@ -332,7 +332,7 @@ export default function StartApp() {
 
     console.log(userData)
 
-    fetch('http://localhost:3000/api/addUser', {
+    fetch('https://customize.tpfe.com.br/api/addUser', {
       method: 'POST',
       body: JSON.stringify({
         email: userData.email,
