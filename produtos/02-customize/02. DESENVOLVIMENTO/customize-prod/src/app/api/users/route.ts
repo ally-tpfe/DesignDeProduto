@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
     return new Response(JSON.stringify('API key inválida'), {
       status: 401, // Código de status não autorizado
       headers: {
-        'Access-Control-Allow-Origin': 'https://localhost:3000',
+        'Access-Control-Allow-Origin': 'https://ally-tpfe.github.io',
       },
     })
   }
@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
       return new Response(JSON.stringify(user), {
         status: 200,
         headers: {
-          'Access-Control-Allow-Origin': 'https://localhost:3000',
+          'Access-Control-Allow-Origin': 'https://ally-tpfe.github.io',
           'Access-Control-Allow-Methods': 'GET',
           'Access-Control-Allow-Headers': 'Content-Type, Authorization',
         },
@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
       return new Response(JSON.stringify('Usuário não encontrado'), {
         status: 404, // Código de status de não encontrado
         headers: {
-          'Access-Control-Allow-Origin': 'https://localhost:3000',
+          'Access-Control-Allow-Origin': 'https://ally-tpfe.github.io',
         },
       })
     }
@@ -45,7 +45,7 @@ export async function GET(request: NextRequest) {
     return new Response(JSON.stringify('Erro interno do servidor'), {
       status: 500, // Código de status de erro interno do servidor
       headers: {
-        'Access-Control-Allow-Origin': 'https://localhost:3000',
+        'Access-Control-Allow-Origin': 'https://ally-tpfe.github.io',
       },
     })
   }
