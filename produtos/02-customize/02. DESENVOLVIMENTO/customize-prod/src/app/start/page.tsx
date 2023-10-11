@@ -18,10 +18,8 @@ export default function StartApp() {
   }
 
   useEffect(() => {
-    window.onload = () => {
-      if (!accounts[0]) {
-        handleLogin()
-      }
+    if (!accounts[0]) {
+      handleLogin()
     }
   })
 
@@ -41,7 +39,7 @@ export default function StartApp() {
             instance.acquireTokenSilent(request).then(async (response) => {
               const accessToken = response.accessToken as string
               await fetch(
-                `/api/users?email=${accounts[0].username}&apiKey=${process.env.API_KEY}`,
+                `/api/users?email=${accounts[0].username}&apiKey=eba33af7-acac-4207-b4f5-b0ea78be9c2b`,
                 { method: 'GET' },
               )
                 .then((res) => res.json())

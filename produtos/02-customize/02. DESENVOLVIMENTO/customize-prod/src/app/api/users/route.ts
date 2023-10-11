@@ -52,7 +52,5 @@ export async function GET(request: NextRequest) {
 }
 
 function isValidApiKey(apiKey: string) {
-  // Implemente sua lógica de validação da chave de API aqui
-  // Por exemplo, você pode verificar se a chave está na lista branca de chaves válidas
-  return apiKey === process.env.API_KEY // Substitua 'sua_chave_de_api' pela chave real
+  return apiKey === process.env.API_KEY
 }

@@ -20,51 +20,53 @@ export default function Home() {
   }
 
   useEffect(() => {
-    async function handleLogin() {
-      let photo = ''
-      if (!accounts[0]) {
-        instance.initialize().catch(() => {
-          instance.acquireTokenPopup(request).then(async (response) => {
-            photo = (await getUserPhoto(response.accessToken)) as string
-            addUser({
-              accessToken: response.accessToken as string,
-              email: accounts[0].username as string,
-              firstName: accounts[0].name?.split(' ')[0] as string,
-              fullName: accounts[0].name as string,
-              usePhoto: true,
-              userPhoto: photo as string,
-              personalPhone: '',
-              workPhone: '',
-              workPhoneExtension: '',
-            })
-            router.push('/start')
-          })
-        })
-      } else {
-        instance.initialize().catch(() => {
-          instance.acquireTokenSilent(request).then(async (response) => {
-            photo = (await getUserPhoto(response.accessToken)) as string
-            addUser({
-              accessToken: response.accessToken as string,
-              email: accounts[0].username as string,
-              firstName: accounts[0].name?.split(' ')[0] as string,
-              fullName: accounts[0].name as string,
-              usePhoto: true,
-              userPhoto: photo as string,
-              personalPhone: '',
-              workPhone: '',
-              workPhoneExtension: '',
-            })
-          })
-        })
-      }
-      router.push('/start')
-    }
     if (!accounts[0]) {
       handleLogin()
+    } else {
+      router.push('/start')
     }
-    router.push('/')
-  }, [accounts])
+  })
+
+  async function handleLogin() {
+    let photo = ''
+    if (!accounts[0]) {
+      instance.initialize().catch(() => {
+        instance.acquireTokenPopup(request).then(async (response) => {
+          photo = (await getUserPhoto(response.accessToken)) as string
+          addUser({
+            accessToken: response.accessToken as string,
+            email: accounts[0].username as string,
+            firstName: accounts[0].name?.split(' ')[0] as string,
+            fullName: accounts[0].name as string,
+            usePhoto: true,
+            userPhoto: photo as string,
+            personalPhone: '',
+            workPhone: '',
+            workPhoneExtension: '',
+          })
+        })
+      })
+      router.push('/start')
+    } else {
+      instance.initialize().catch(() => {
+        instance.acquireTokenSilent(request).then(async (response) => {
+          photo = (await getUserPhoto(response.accessToken)) as string
+          addUser({
+            accessToken: response.accessToken as string,
+            email: accounts[0].username as string,
+            firstName: accounts[0].name?.split(' ')[0] as string,
+            fullName: accounts[0].name as string,
+            usePhoto: true,
+            userPhoto: photo as string,
+            personalPhone: '',
+            workPhone: '',
+            workPhoneExtension: '',
+          })
+        })
+      })
+    }
+    router.push('/start')
+  }
 
   return (
     <>

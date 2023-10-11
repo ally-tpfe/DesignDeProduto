@@ -8,8 +8,8 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const access_key = process.env.ACCESS_KEY
-const secret_access_key = process.env.SECRET_ACCESS_KEY
+const access_key = 'AKIAVDH6WIRPE5L4Y2FC'
+const secret_access_key = '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'
 
 const s3 = new S3Client({
   credentials: {
