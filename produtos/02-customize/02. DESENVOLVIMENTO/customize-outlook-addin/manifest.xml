@@ -4,11 +4,11 @@
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="MailApp">
   <Id>{AE430252-DC12-41FA-BF5A-031C9873AEB8}</Id>
-  <Version>1.1</Version>
+  <Version>1.0</Version>
   <ProviderName>TPF Engenharia</ProviderName>
   <DefaultLocale>pt-br</DefaultLocale>
   <DisplayName DefaultValue="Customize"/>
-  <Description DefaultValue="Torne seu e-mail mais confiável de forma rápida e simples"/>
+  <Description DefaultValue="Torne seu e-mail TPF mais confiável de forma rápida e simples"/>
   <IconUrl DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/assets/logo-customize-sm.png"/>
   <HighResolutionIconUrl DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/assets/logo-customize-sm.png"/>
   <SupportUrl DefaultValue="https://www.customize.tpfe.com.br/ajuda"/>
