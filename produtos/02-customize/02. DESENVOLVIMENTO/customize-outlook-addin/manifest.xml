@@ -4,7 +4,7 @@
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="MailApp">
   <Id>{AE430252-DC12-41FA-BF5A-031C9873AEB8}</Id>
-  <Version>1.0</Version>
+  <Version>1.1</Version>
   <ProviderName>TPF Engenharia</ProviderName>
   <DefaultLocale>pt-br</DefaultLocale>
   <DisplayName DefaultValue="Customize"/>
@@ -22,6 +22,7 @@
   <Requirements>
     <Sets DefaultMinVersion="1.1">
       <Set Name="Mailbox" />
+      <Value>16.0</Value>
     </Sets>
   </Requirements>
 
