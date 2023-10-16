@@ -4,6 +4,8 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 
 import EmailSignatureTemplateSVG from '@/assets/emailSignatureTemplate.svg'
+import singarutreSideA from '@/assets/sideA.svg'
+import singarutreSideB from '@/assets/sideB.svg'
 import Signature from '@/components/signature/Signature'
 import { motion, useAnimation } from 'framer-motion'
 import { ArrowLeft, Share } from '@phosphor-icons/react'
@@ -86,23 +88,14 @@ export default function StartApp() {
           console.log(e)
         })
         instance.acquireTokenSilent(request).then((response) => {
-          uploadUserPhotoToS3(response.accessToken)
-            .then((photo) => {
-              addUser({
-                firstName: accounts[0].name?.split(' ')[0] as string,
-                email: accounts[0].username as string,
-                fullName: accounts[0].name as string,
-                usePhoto: true,
-                userPhoto: photo as string,
-                accessToken: response.accessToken as string,
-                personalPhone: '',
-                workPhone: '',
-                workPhoneExtension: '',
-              })
+          uploadUserPhotoToS3(response.accessToken).then((photo) => {
+            addUser({
+              ...user,
+              usePhoto: true,
+              userPhoto: photo as string,
+              accessToken: response.accessToken as string,
             })
-            .finally(() => {
-              router.push('/start/signature')
-            })
+          })
         })
       }
       getAndSetUserPhoto()
@@ -174,7 +167,7 @@ export default function StartApp() {
         })
       await buttonsControl.start({
         opacity: 1,
-        transition: { duration: 0.5 },
+        transition: { duration: 1.3 },
       })
     }
 
@@ -352,7 +345,7 @@ export default function StartApp() {
 
   return (
     <motion.div
-      className="flex h-full w-full flex-col gap-10"
+      className="flex h-full w-[100-20rem] flex-col gap-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2 }}
@@ -373,28 +366,37 @@ export default function StartApp() {
       </motion.div>
       <motion.div
         id="form"
-        className="flex h-[19.31619rem] max-h-[20rem] min-h-[19rem] w-[full] flex-col items-start justify-center rounded-2xl bg-customize-signature-form-background shadow-customize-signature-form-shadow backdrop-blur-[20px]"
+        className="flex h-[19.31619rem] max-h-[20rem] min-h-[19rem] w-[57rem] flex-col items-start justify-center rounded-2xl bg-customize-signature-form-background shadow-customize-signature-form-shadow backdrop-blur-[20px]"
         animate={controls}
       >
         <SignatureForm />
       </motion.div>
       <motion.div
         id="signature"
-        className="flex h-[14.5rem] w-full min-w-[50rem] items-center rounded-xl pb-[0.01rem]"
+        className="flex h-full w-[57rem] items-center justify-center gap-6 "
         animate={signatureControl}
       >
-        <Image
-          src={EmailSignatureTemplateSVG}
-          alt=""
-          className="h-full w-full min-w-full rounded-3xl object-cover"
-        />
-        <div className="relative right-[70%] top-0 flex h-[13rem] min-w-[40rem] items-center gap-6">
-          <Signature />
+        <div className="flex h-[calc(100%-2rem)] w-[46rem] items-center justify-between rounded-md bg-white">
+          <Image
+            src={singarutreSideA}
+            alt=""
+            className="mx-0 mr-auto h-full rounded-s-md bg-white object-fill p-0"
+            height={215}
+          />
+          <div className="top-0 flex max-w-[56rem] items-center  justify-evenly gap-2">
+            <Signature />
+          </div>
+          <Image
+            src={singarutreSideB}
+            alt=""
+            height={215}
+            className="mx-0 ml-auto h-full rounded-e-md bg-white object-fill p-0"
+          />
         </div>
       </motion.div>
       <div
         id="buttons"
-        className="fixed left-[50%] top-[70%] flex translate-x-[-50%] translate-y-[-50%] transform gap-12"
+        className="fixed left-[50%] top-[70%] flex translate-x-[-55%] translate-y-[-40%] transform gap-12"
       >
         <motion.button
           id="voltar"
@@ -443,6 +445,7 @@ export default function StartApp() {
           </h1>
         </div>
         <button
+          type="button"
           onClick={() => window.location.reload()}
           id="afterFinishButton"
           className="relative bottom-0 left-0 right-0 top-0 m-auto flex flex-col items-center gap-4"

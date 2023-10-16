@@ -17,12 +17,6 @@ export default function Nav() {
         href="/start/signature"
         active={activeTab.endsWith('/signature')}
       />
-      <NavItem
-        icon={UserRectangle}
-        title="Plan. de fundo"
-        href="/start/backgrounds"
-        active={activeTab.endsWith('/backgrounds')}
-      />
     </div>
   )
 }

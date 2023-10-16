@@ -65,7 +65,7 @@ export default function Sidebar({ children }: SidebarProps) {
       <AppHeader />
       <div className="flex h-app-frame-height max-h-[580px] w-app-frame-width max-w-[1280px] gap-16">
         <motion.div
-          className="flex w-[11.5rem] flex-col items-center rounded-2xl bg-customize-sidebar-background shadow-customize-sidebar-finish-shadow"
+          className="flex w-[11.5rem] min-w-[11.5rem] flex-col items-center rounded-2xl bg-customize-sidebar-background shadow-customize-sidebar-finish-shadow"
           id="sidebar"
           animate={controls}
         >
@@ -93,7 +93,7 @@ export default function Sidebar({ children }: SidebarProps) {
           <Nav />
           <SidebarFooter />
         </motion.div>
-        <div className="flex-1">{children}</div>
+        <div className="max-w-[100%-30rem] flex-1">{children}</div>
       </div>
       <div>
         <footer className="mt-5">

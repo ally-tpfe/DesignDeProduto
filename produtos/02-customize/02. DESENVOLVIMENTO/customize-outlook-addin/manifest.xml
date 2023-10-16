@@ -3,8 +3,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="MailApp">
-  <Id>{AE430252-DC12-41FA-BF5A-031C9873AEB8}</Id>
-  <Version>1.0</Version>
+  <Id>{57B7F894-4549-4D62-9BDF-00BFB4D5F7E7}</Id>
+  <Version>1.1</Version>
   <ProviderName>TPF Engenharia</ProviderName>
   <DefaultLocale>pt-br</DefaultLocale>
   <DisplayName DefaultValue="Customize"/>
@@ -22,7 +22,6 @@
   <Requirements>
     <Sets DefaultMinVersion="1.1">
       <Set Name="Mailbox" />
-      <Value>16.0</Value>
     </Sets>
   </Requirements>
 
@@ -30,7 +29,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/taskpane/HTML/editsignature.html"/>
+        <SourceLocation DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/taskpane/HTML/assignsignature.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -126,7 +125,7 @@
           <bt:Image id="Icon16x16" DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/assets/logo-customize-sm.png"></bt:Image>
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="residUrl0" DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/taskpane/HTML/editsignature.html"></bt:Url>
+          <bt:Url id="residUrl0" DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/taskpane/HTML/assignsignature.html"></bt:Url>
           <bt:Url id="Autorun" DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/runtime/HTML/autorunweb.html"></bt:Url>
           <bt:Url id="runtimeJs" DefaultValue="https://ally-tpfe.github.io/DesignDeProduto/produtos/02-customize/02.%20DESENVOLVIMENTO/customize-outlook-addin/src/runtime/Js/autorunshared.js"></bt:Url>
         </bt:Urls>

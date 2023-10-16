@@ -14,6 +14,8 @@ export default function Card({
   description,
   action,
 }: CardProps) {
+  const desativado = title === 'Plano de fundo para chamadas'
+
   return (
     <div className="flex flex-col items-center">
       <div className="flex h-60 w-[30rem] flex-col items-center justify-center rounded-3xl bg-white px-6 shadow-customize-card-shadow backdrop-blur-md">
@@ -26,8 +28,9 @@ export default function Card({
         </h1>
       </div>
       <button
+        disabled={desativado}
         onClick={action}
-        className="relative -top-2 h-8 w-32 rounded-md bg-customize-button-azul-claro font-semibold text-white shadow-customize-button-shadow transition-all duration-200 hover:bg-blue-700"
+        className="relative -top-2 h-8 w-32 rounded-md bg-customize-button-azul-claro font-semibold text-white shadow-customize-button-shadow transition-all duration-200 hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-zinc-200 disabled:shadow-customize-card-shadow"
       >
         Começar
       </button>

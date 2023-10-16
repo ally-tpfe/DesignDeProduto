@@ -59,11 +59,12 @@ export default function StartApp() {
                         workPhoneExtension: '',
                       })
                     })
+                  } else if (!data) {
+                    router.push('/')
                   }
                 })
             })
             console.log(user)
-            router.push('/start')
           })
       })
   }
