@@ -20,8 +20,8 @@ export default function SidebarFooter() {
       })
   }
   return (
-    <footer className="w-[73%]">
-      <div className="flex flex-col items-start py-2 text-[#002f62]">
+    <footer className="mt-auto flex w-[60%] items-center justify-center">
+      <div className="flex w-full flex-col items-start py-2 text-[#002f62] ">
         <span className="flex h-10 items-center gap-2">
           <Question /> Ajuda
         </span>

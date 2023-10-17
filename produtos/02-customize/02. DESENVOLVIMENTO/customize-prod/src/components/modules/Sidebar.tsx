@@ -61,37 +61,40 @@ export default function Sidebar({ children }: SidebarProps) {
   }, [controls])
 
   return (
-    <div className="flex max-h-[90vh] flex-col">
+    <div id="sidebar" className="flex max-h-[90vh] flex-col">
       <AppHeader />
       <div className="flex h-app-frame-height max-h-[580px] w-app-frame-width max-w-[1280px] gap-16">
         <motion.div
-          className="flex w-[11.5rem] min-w-[11.5rem] flex-col items-center rounded-2xl bg-customize-sidebar-background shadow-customize-sidebar-finish-shadow"
-          id="sidebar"
           animate={controls}
+          className="flex w-[11.5rem] min-w-[11.5rem] flex-col items-center  rounded-s-2xl"
         >
-          <div className="flex h-[14rem] w-full flex-col items-center justify-center gap-4">
-            {user.userPhoto ? (
-              <div className="flex h-28 w-28 items-center justify-center rounded-full bg-zinc-300 text-[3.5rem] text-[#0067FF]">
-                <Image
-                  src={user.userPhoto}
-                  alt=""
-                  width={112}
-                  height={112}
-                  className="rounded-full"
-                />
-              </div>
-            ) : (
-              <div className="flex h-28 w-28 items-center justify-center rounded-full bg-zinc-300 text-[3.5rem] text-[#0067FF]">
-                <User />
-              </div>
-            )}
-            <h1 className="flex gap-1 text-xl font-bold text-[#002F62]">
-              Olá,
-              <span className="text-[#0067FF]">{userName}!</span>
-            </h1>
+          <div className="h-2/5 w-full  rounded-t-2xl rounded-br-2xl bg-customize-sidebar-background shadow-customize-sidebar-finish-shadow">
+            <div className="flex h-[14rem] w-full flex-col items-center justify-center gap-4">
+              {user.userPhoto ? (
+                <div className="flex h-28 w-28 items-center justify-center rounded-full bg-zinc-300 text-[3.5rem] text-[#0067FF]">
+                  <Image
+                    src={user.userPhoto}
+                    alt=""
+                    width={112}
+                    height={112}
+                    className="rounded-full"
+                  />
+                </div>
+              ) : (
+                <div className="flex h-28 w-28 items-center justify-center rounded-full bg-zinc-300 text-[3.5rem] text-[#0067FF]">
+                  <User />
+                </div>
+              )}
+              <h1 className="flex gap-1 text-xl font-bold text-[#002F62]">
+                Olá,
+                <span className="text-[#0067FF]">{userName}!</span>
+              </h1>
+            </div>
           </div>
           <Nav />
-          <SidebarFooter />
+          <div className="mt-auto flex h-2/3 w-full items-center justify-center  rounded-b-2xl rounded-tr-2xl bg-customize-sidebar-background shadow-customize-sidebar-finish-shadow">
+            <SidebarFooter />
+          </div>
         </motion.div>
         <div className="max-w-[100%-30rem] flex-1">{children}</div>
       </div>

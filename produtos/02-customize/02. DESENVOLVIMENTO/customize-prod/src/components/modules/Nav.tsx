@@ -10,7 +10,6 @@ export default function Nav() {
 
   return (
     <div className="text-md mt-1 flex w-[100%] flex-1 flex-col items-center">
-      <div className="h-[1px] w-[80%] bg-zinc-300 " />
       <NavItem
         icon={PencilSimpleLine}
         title="Assinaturas"

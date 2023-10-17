@@ -238,7 +238,7 @@ export default function StartApp() {
         transition: { duration: 0.1 },
       }).then(() => {
         AnimateOutlookLogo.start({
-          translateY: '458%',
+          translateY: '465%',
           scale: 1.3,
           transition: { duration: 0.5 },
         })
@@ -267,7 +267,7 @@ export default function StartApp() {
               .then(() => {
                 AnimateOutlookLogo.start({
                   scale: 1.1,
-                  translateY: '322%',
+                  translateY: '325%',
                 })
               })
               .then(() => {
@@ -376,21 +376,21 @@ export default function StartApp() {
         className="flex h-full w-[57rem] items-center justify-center gap-6 "
         animate={signatureControl}
       >
-        <div className="flex h-[calc(100%-2rem)] w-[46rem] items-center justify-between rounded-md bg-white">
+        <div className="flex h-[calc(100%-2rem)] w-[46rem] items-center justify-between rounded-2xl bg-white">
           <Image
             src={singarutreSideA}
             alt=""
-            className="mx-0 mr-auto h-full rounded-s-md bg-white object-fill p-0"
+            className="mx-0 mr-auto h-full rounded-s-2xl bg-white object-fill p-0"
             height={215}
           />
-          <div className="top-0 flex max-w-[56rem] items-center  justify-evenly gap-2">
+          <div className="top-0 flex max-w-[56rem] items-center justify-evenly gap-2 rounded-2xl">
             <Signature />
           </div>
           <Image
             src={singarutreSideB}
             alt=""
             height={215}
-            className="mx-0 ml-auto h-full rounded-e-md bg-white object-fill p-0"
+            className="mx-0 ml-auto h-full rounded-e-2xl bg-white object-fill p-0"
           />
         </div>
       </motion.div>
@@ -440,8 +440,8 @@ export default function StartApp() {
         <h1 className="text-3xl font-bold text-white">Tudo certo! ❤️</h1>
         <div className="flex h-[12rem] w-[25rem] items-center justify-center rounded-2xl bg-customize-signature-form-background p-3 text-center text-white shadow-customize-card-finish-shadow backdrop-blur-[20px]">
           <h1 className="text-lg">
-            A assinatura já está no seu e-mail e irá aparecer automáticamente em
-            todos os e-mails que você enviar daqui pra frente.
+            Acesse o outlook, crie um novo e-mail e abra o plugin localizado na
+            barra superior para ativar a sua assinatura agora mesmo!
           </h1>
         </div>
         <button
