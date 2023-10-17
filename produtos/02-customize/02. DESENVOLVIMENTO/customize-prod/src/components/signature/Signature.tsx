@@ -5,6 +5,7 @@ import React from 'react'
 import { Poppins } from 'next/font/google'
 import InstagramLogo from '@/assets/IgIcon.svg'
 import LinkedinLogo from '@/assets/InIcon.svg'
+import { useMsal } from '@azure/msal-react'
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
@@ -12,6 +13,7 @@ const poppins = Poppins({
 })
 export default function Signature() {
   const { user } = useUserContext()
+  const { accounts } = useMsal()
 
   return (
     <>
@@ -32,11 +34,19 @@ export default function Signature() {
         <h1
           className={`${poppins.variable} mt-2 text-base font-bold text-[#0067FF]`}
         >
-          {user.fullName.toUpperCase()}
+          {user.fullName
+            ? user.fullName.toUpperCase()
+            : accounts[0].name
+            ? accounts[0].name.toUpperCase()
+            : ''}
         </h1>
         <div className={`${poppins.variable} flex flex-col`}>
           <span className={`${poppins.variable} text-sm text-[#003B75]`}>
-            {user.email}
+            {user.email
+              ? user.email
+              : accounts[0].username
+              ? accounts[0].username
+              : ''}
           </span>
           <span className={`${poppins.variable} text-sm text-[#003B75]`}>
             {user.workPhone}{' '}
@@ -45,6 +55,9 @@ export default function Signature() {
               : ''}{' '}
             <br />
             {user.personalPhone ? ` ${user.personalPhone}` : ''}
+          </span>
+          <span className={`${poppins.variable} text-sm text-[#003B75]`}>
+            www.tpfengenharia.com.br
           </span>
           <div className={`${poppins.variable} flex gap-2`}>
             <a
@@ -60,12 +73,9 @@ export default function Signature() {
               <Image src={LinkedinLogo} alt="" width={15} height={15} />
             </a>
           </div>
-          <span className={`${poppins.variable} text-sm text-[#003B75]`}>
-            www.tpfengenharia.com
-          </span>
         </div>
         <h1 className={`${poppins.variable} text-md text-[#0067FF]`}>
-          Building the world, better.
+          Building the world, <b>better.</b>
         </h1>
       </div>
     </>

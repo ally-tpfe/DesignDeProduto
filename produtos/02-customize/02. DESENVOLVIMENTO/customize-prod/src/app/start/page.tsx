@@ -19,55 +19,9 @@ export default function StartApp() {
 
   useEffect(() => {
     if (!accounts[0]) {
-      handleLogin()
+      router.push('/')
     }
   })
-
-  const handleLogin = async () => {
-    instance
-      .initialize()
-      .catch((e) => {
-        console.log(e)
-      })
-      .then(() => {
-        instance
-          .loginRedirect(msalConfig.auth)
-          .catch((e) => {
-            console.log(e)
-          })
-          .finally(() => {
-            instance.acquireTokenSilent(request).then(async (response) => {
-              const accessToken = response.accessToken as string
-              await fetch(
-                `/api/users?email=${accounts[0].username}&apiKey=eba33af7-acac-4207-b4f5-b0ea78be9c2b`,
-                { method: 'GET' },
-              )
-                .then((res) => res.json())
-                .then((data) => {
-                  console.log(data)
-                  if (!data.email) {
-                    getUserPhoto(accessToken).then((photo) => {
-                      addUser({
-                        firstName: accounts[0].name?.split(' ')[0] as string,
-                        email: accounts[0].username as string,
-                        fullName: accounts[0].name as string,
-                        usePhoto: true,
-                        userPhoto: photo as string,
-                        accessToken,
-                        personalPhone: '',
-                        workPhone: '',
-                        workPhoneExtension: '',
-                      })
-                    })
-                  } else if (!data) {
-                    router.push('/')
-                  }
-                })
-            })
-            console.log(user)
-          })
-      })
-  }
 
   return (
     <div className="flex h-full w-full items-center justify-center">

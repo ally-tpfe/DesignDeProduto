@@ -100,7 +100,7 @@ export default function StartApp() {
       }
       getAndSetUserPhoto()
     } else {
-      handleLogin()
+      router.push('/')
     }
     const handleClick = async () => {
       await animateElements()

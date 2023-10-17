@@ -6,6 +6,7 @@ import { useUserContext } from '@/contexts/UserContext'
 import * as z from 'zod'
 import { useForm } from 'react-hook-form'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import { useMsal } from '@azure/msal-react'
 
 const userSchema = z.object({
   name: z
@@ -36,6 +37,7 @@ type userSchema = z.infer<typeof userSchema>
 export default function SignatureForm() {
   const { register, watch, handleSubmit, formState } = useForm<userSchema>()
   const { user, addUser } = useUserContext()
+  const { accounts } = useMsal()
 
   return (
     <form className="-z-50 flex h-full w-[100%-15rem] flex-col px-12 pt-6">
@@ -94,7 +96,7 @@ export default function SignatureForm() {
             <input
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
-              defaultValue={user.email}
+              defaultValue={accounts[0].username}
               placeholder="nome.sobrenome@tpfe.com.br"
               {...register('email', {
                 onChange: (e) => {
@@ -114,7 +116,7 @@ export default function SignatureForm() {
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
               placeholder="Nome"
-              defaultValue={user.fullName}
+              defaultValue={accounts[0].name}
               {...register('name', {
                 onChange: (e) => {
                   addUser({ ...user, fullName: e.target.value })

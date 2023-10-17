@@ -16,7 +16,7 @@ export default function SidebarFooter() {
       .then(() => {
         localStorage.removeItem('tpf-customize@user')
         instance.logoutRedirect()
-        router.push('/start')
+        router.push('/')
       })
   }
   return (
