@@ -6,7 +6,6 @@ const prisma = new PrismaClient()
 export async function POST(req: NextRequest) {
   const data = await req.json()
 
-  // check if user exists
   const user = await prisma.user.findUnique({
     where: {
       email: data.email,
@@ -21,10 +20,26 @@ export async function POST(req: NextRequest) {
           user_photo: data.user_photo ? data.user_photo : 'null',
           personal_phone: data.personal_phone ? data.personal_phone : 'null',
           work_phone: data.work_phone ? data.work_phone : 'null',
+          work_phone_extension: data.work_phone_extension
+            ? data.work_phone_extension
+            : 'null',
         },
       })
     } else {
-      console.log('User already exists')
+      await prisma.user.update({
+        where: {
+          email: data.email,
+        },
+        data: {
+          name: data.name,
+          user_photo: data.user_photo ? data.user_photo : 'null',
+          personal_phone: data.personal_phone ? data.personal_phone : 'null',
+          work_phone: data.work_phone ? data.work_phone : 'null',
+          work_phone_extension: data.work_phone_extension
+            ? data.work_phone_extension
+            : 'null',
+        },
+      })
     }
   } catch (error) {
     console.log(error)
