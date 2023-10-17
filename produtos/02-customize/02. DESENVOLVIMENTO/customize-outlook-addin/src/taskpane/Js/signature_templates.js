@@ -67,7 +67,7 @@ function get_template_A_str(user_info) {
           <h2 style="font-family: 'BRSonoma-Black', Helvetica;">${to_uppercase(user_info.name)}</h2>
           <div>  
           <p>${user_info.email}</p>
-            ${user_info.work_phone !== "null" ? `<p>${user_info.work_phone} - ramal ${user_info.work_phone_extension}</p>` : ""}
+            ${user_info.work_phone !== "null" ? `<p>${user_info.work_phone}  ${user_info.work_phone_extension ? `ramal - ${user_info.work_phone_extension}` : ""}</p>` : ""}
             ${user_info.personal_phone !== "null" ? `<p>${user_info.personal_phone}</p>` : ""}
             <a href="https://www.tpfengenharia.com">www.tpfengenharia.com</a>⠀
             <br />

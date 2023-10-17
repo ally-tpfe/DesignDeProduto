@@ -96,7 +96,7 @@ export default function SignatureForm() {
             <input
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
-              defaultValue={accounts[0].username}
+              defaultValue={accounts[0].username ? accounts[0].username : ''}
               placeholder="nome.sobrenome@tpfe.com.br"
               {...register('email', {
                 onChange: (e) => {
@@ -116,7 +116,7 @@ export default function SignatureForm() {
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
               placeholder="Nome"
-              defaultValue={accounts[0].name}
+              defaultValue={accounts[0].name ? accounts[0].name : ''}
               {...register('name', {
                 onChange: (e) => {
                   addUser({ ...user, fullName: e.target.value })
