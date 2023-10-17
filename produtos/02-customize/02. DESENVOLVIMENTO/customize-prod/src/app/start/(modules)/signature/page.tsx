@@ -1,9 +1,9 @@
 'use client'
+/* eslint-disable no-use-before-define */
 import SignatureForm from '@/components/signature/Form'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 
-import EmailSignatureTemplateSVG from '@/assets/emailSignatureTemplate.svg'
 import singarutreSideA from '@/assets/sideA.svg'
 import singarutreSideB from '@/assets/sideB.svg'
 import Signature from '@/components/signature/Signature'
@@ -66,8 +66,8 @@ export default function StartApp() {
                 const photo = async () => await uploadUserPhotoToS3(accessToken)
                 addUser({
                   firstName: accounts[0].name?.split(' ')[0] as string,
-                  email: accounts[0].username as string,
-                  fullName: accounts[0].name as string,
+                  email: accounts[0]?.username as string,
+                  fullName: accounts[0]?.name as string,
                   usePhoto: true,
                   userPhoto: '',
                   accessToken,

@@ -36,7 +36,7 @@ export default function Signature() {
         >
           {user.fullName
             ? user.fullName.toUpperCase()
-            : accounts[0].name
+            : accounts[0]?.name
             ? accounts[0].name.toUpperCase()
             : ''}
         </h1>
@@ -44,7 +44,7 @@ export default function Signature() {
           <span className={`${poppins.variable} text-sm text-[#003B75]`}>
             {user.email
               ? user.email
-              : accounts[0].username
+              : accounts[0]?.username
               ? accounts[0].username
               : ''}
           </span>

@@ -1,4 +1,6 @@
 'use client'
+/* eslint-disable no-use-before-define */
+
 import React, { useEffect } from 'react'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 import { CaretDown, Check, Share } from '@phosphor-icons/react'
@@ -96,7 +98,13 @@ export default function SignatureForm() {
             <input
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
-              defaultValue={accounts[0].username ? accounts[0].username : ''}
+              defaultValue={
+                user.email
+                  ? user.email
+                  : accounts[0]?.username
+                  ? accounts[0].username
+                  : ''
+              }
               placeholder="nome.sobrenome@tpfe.com.br"
               {...register('email', {
                 onChange: (e) => {
@@ -115,8 +123,14 @@ export default function SignatureForm() {
               id="name"
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
+              defaultValue={
+                user.fullName
+                  ? user.fullName
+                  : accounts[0]?.name
+                  ? accounts[0].name
+                  : ''
+              }
               placeholder="Nome"
-              defaultValue={accounts[0].name ? accounts[0].name : ''}
               {...register('name', {
                 onChange: (e) => {
                   addUser({ ...user, fullName: e.target.value })
