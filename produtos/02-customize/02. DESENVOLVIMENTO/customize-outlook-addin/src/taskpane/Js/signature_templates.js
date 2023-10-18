@@ -53,7 +53,7 @@ function get_template_A_str(user_info) {
       letter-spacing: 1.05px;
       margin-top: 10.72px;
     }
-
+    
     
   </style>
     <table>

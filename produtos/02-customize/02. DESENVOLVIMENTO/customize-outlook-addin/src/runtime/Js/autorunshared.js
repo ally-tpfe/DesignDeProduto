@@ -230,7 +230,6 @@ function get_template_A_info(user_info) {
 
   
 </style>
-</style>
 <table>
 <tr>
   <td>
