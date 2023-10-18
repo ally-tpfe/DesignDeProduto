@@ -6,7 +6,7 @@ import { UserContextProvider } from '@/contexts/UserContextProvider'
 export const metadata: Metadata = {
   title: 'Customize',
   description:
-    'Sistema gerador de arquivos desenvolvido pela TPF Engenharia LTDA - 2023 @ Equipe DevDesign',
+    'Sistema gerador de arquivos desenvolvido pela TPF Engenharia LTDA - 2023 @ Design de Produto',
 }
 
 export default async function RootLayout({

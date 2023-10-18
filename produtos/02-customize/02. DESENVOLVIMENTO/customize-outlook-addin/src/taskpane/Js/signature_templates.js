@@ -69,11 +69,11 @@ function get_template_A_str(user_info) {
           <p>${user_info.email}</p>
             ${user_info.work_phone !== "null" ? `<p>${user_info.work_phone}  ${user_info.work_phone_extension ? `ramal - ${user_info.work_phone_extension}` : ""}</p>` : ""}
             ${user_info.personal_phone !== "null" ? `<p>${user_info.personal_phone}</p>` : ""}
-            <a href="https://www.tpfengenharia.com">www.tpfengenharia.com</a>⠀
+            <a href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>⠀
             <br />
               <a href="https://www.linkedin.com/company/tpfengenharia">
                 <img src='https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true' alt='' width='13' height='13' />
-              </a>⠀
+              </a>
               <a  href="https://www.instagram.com/tpfengenharia">
                 <img src='https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true' alt='' width='14' height='14' />
               </a>

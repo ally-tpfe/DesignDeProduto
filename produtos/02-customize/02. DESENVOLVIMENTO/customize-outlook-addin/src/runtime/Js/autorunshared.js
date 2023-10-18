@@ -229,42 +229,37 @@ function get_template_A_info(user_info) {
 
   
 </style>
-  <table>
-    <tr>
-      <td>
-        <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-a.png' alt='' width='154' height='150' />
-      </td>
-      <td class="avatar">${user_info.user_photo ? `<img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" />` : ""}</td>
-      <td ></td>
-      <td></td>
-  <td></td>
-  <td></td>
-      <td class="user-info">
-        <h2 style="font-family: 'BRSonoma-Black', Helvetica;">${user_name}</h2>
-        <div>  
-        <p>${user_info.email}</p>
-          ${user_info.work_phone !== "null" ? `<p>${user_info.work_phone} - ramal ${user_info.work_phone_extension}</p>` : ""}
-          ${user_info.personal_phone !== "null" ? `<p>${user_info.personal_phone}</p>` : ""}
-          <a href="https://www.tpfengenharia.com">www.tpfengenharia.com</a>⠀
-          <br />
-            <a href="https://www.linkedin.com/company/tpfengenharia">
-              <img src='https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true' alt='' width='13' height='13' />
-            </a>⠀
-            <a  href="https://www.instagram.com/tpfengenharia">
-              <img src='https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true' alt='' width='14' height='14' />
-            </a>
-          <p class="slogan">Building the world, better</p>
-        </div>
-          </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>
-        <img style="margin-left: 20px;" src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-b.png' alt='' width='95' height='150' />
-      </td>
-    </tr>
-  </table>
+</style>
+    <table>
+      <tr>
+        <td>
+          <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-a.png' alt='' width='154' height='150' />
+        </td>
+        <td class="avatar">${user_info.user_photo ? `<img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" />` : ""}</td>
+        <td ></td>
+    <td></td>
+        <td class="user-info">
+          <h2 style="font-family: 'BRSonoma-Black', Helvetica;">${user_name}</h2>
+          <div>  
+          <p>${user_info.email}</p>
+            ${user_info.work_phone !== "null" ? `<p>${user_info.work_phone}  ${user_info.work_phone_extension ? `ramal - ${user_info.work_phone_extension}` : ""}</p>` : ""}
+            ${user_info.personal_phone !== "null" ? `<p>${user_info.personal_phone}</p>` : ""}
+            <a href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>⠀
+            <br />
+              <a href="https://www.linkedin.com/company/tpfengenharia">
+                <img src='https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true' alt='' width='13' height='13' />
+              </a>
+              <a  href="https://www.instagram.com/tpfengenharia">
+                <img src='https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true' alt='' width='14' height='14' />
+              </a>
+            <p class="slogan">Building the world, better</p>
+          </div>
+            </td>
+        <td>
+          <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-b.png' alt='' width='95' height='150' />
+        </td>
+      </tr>
+    </table>
 `;
 
 
