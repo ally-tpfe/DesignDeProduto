@@ -29,7 +29,7 @@ function get_template_A_str(user_info) {
       font-weight: 800;
       line-height: normal;
       letter-spacing: 0.84px;
-      margin-bottom: 9px;
+      margin-bottom: 5px;
     }
 
     .user-info p, a{
@@ -66,15 +66,17 @@ function get_template_A_str(user_info) {
     <td></td>
         <td class="user-info">
           <h2 style="font-family: 'BRSonoma-Black', Helvetica;">${to_uppercase(user_info.name)}</h2>
-          <div style="display:flex;flex-direction:column;">
-          <a href="mailto:${user_info.email}">${user_info.email}</a> <br />
+          <div style="display:flex;flex-direction:column;line-height:1.5">
+          <a href="mailto:${user_info.email}">${user_info.email}</a>
             ${user_info.work_phone !== "null" ? `<a href="tel:${user_info.work_phone}">${user_info.work_phone}  ${user_info.work_phone_extension !== "null" ? `ramal - ${user_info.work_phone_extension}` : ""}</a>` : ""}
             ${user_info.personal_phone !== "null" ? `<a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""} 
-            <a href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>⠀
-            <br />
-            <div style="display:flex;gap:10px">
+            <a href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>
+            <div style="display:flex;gap:1rem">
               <a href="https://www.linkedin.com/company/tpfengenharia">
                 <img src='https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true' alt='' width='13' height='13' />
+                ‎
+                ‎ 
+                ‎ 
               </a>  
               <a  href="https://www.instagram.com/tpfengenharia">
                 <img src='https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true' alt='' width='14' height='14' />
