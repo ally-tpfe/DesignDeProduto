@@ -236,7 +236,7 @@ function get_template_A_info(user_info) {
   <td>
     <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-a.png' alt='' width='154' height='150' />
   </td>
-  ${user_info.user_photo ? 
+  ${user_info.user_photo === "null" ? 
     `<td class="avatar"><img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" /> </td>`
    : ""}
   <td ></td>
