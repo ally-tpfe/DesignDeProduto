@@ -72,12 +72,14 @@ function get_template_A_str(user_info) {
             ${user_info.personal_phone !== "null" ? `<a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""} 
             <a href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>⠀
             <br />
+            <div style="display:flex;gap:10px">
               <a href="https://www.linkedin.com/company/tpfengenharia">
                 <img src='https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true' alt='' width='13' height='13' />
               </a>  
               <a  href="https://www.instagram.com/tpfengenharia">
                 <img src='https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true' alt='' width='14' height='14' />
               </a>
+            </div>
             <p class="slogan">Building the world, <b>better</b></p>
           </div>
             </td>
