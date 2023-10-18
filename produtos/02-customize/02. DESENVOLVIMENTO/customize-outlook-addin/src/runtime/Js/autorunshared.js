@@ -172,100 +172,94 @@ function get_template_A_info(user_info) {
   user_name = user_name.toUpperCase();
 
   
-  let str = `
+  str += `
   <style>
-  *{
-    box-sizing: border-box;
-    padding:0;
-    margin:0;
-  }
+    *{
+      box-sizing: border-box;
+      padding:0;
+      margin:0;
+    }
 
-  td{
-    padding:0;
-    margin:0;
-  }
+    td{
+      padding:0 5px;
+    }
 
-  table {
-    border-collapse: collapse;
-    padding:0;
-    margin:0;
-  }
+    table {
+      border-collapse: collapse;
+      padding:0;
+      margin:0;
+    }
 
-  .user-info h2{
-    color: #0067FF;
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    letter-spacing: 0.84px;
-    margin-bottom: 5px;
-  }
+    .user-info h2{
+      color: #0067FF;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      letter-spacing: 0.84px;
+      margin-bottom: 5px;
+    }
 
-  .user-info p, a{
-    color: #003B75;
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.096px;
-    text-decoration: none;
-  }
+    .user-info p, a{
+      color: #003B75;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.096px;
+      text-decoration: none;
+    }
 
-  .slogan{
-    color: #0067FF;
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 1.05px;
-    margin-top: 10.72px;
-  }
+    .slogan{
+      color: #0067FF;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 1.05px;
+      margin-top: 10.72px;
+    }
 
-  .avatar{
-    padding-right: 20px;
-  }
-
-  
-</style>
-</style>
-<table>
-<tr>
-  <td>
-    <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-a.png' alt='' width='154' height='150' />
-  </td>
-  <td class="avatar">${user_info.user_photo ? `<img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" />` : ""}</td>
-  <td ></td>
-<td></td>
-  <td class="user-info">
-    <h2 style="font-family: 'BRSonoma-Black', Helvetica;">${user_name}</h2>
-    <div style="display:flex;flex-direction:column;line-height:1.5">
-    <a href="mailto:${user_info.email}">${user_info.email}</a>
-      ${user_info.work_phone !== "null" ? `<a href="tel:${user_info.work_phone}">${user_info.work_phone}  ${user_info.work_phone_extension !== "null" ? `ramal - ${user_info.work_phone_extension}` : ""}</a>` : ""}
-      ${user_info.personal_phone !== "null" ? `<a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""} 
-      <a href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>
-      <div style="display:flex;gap:1rem">
-        <a href="https://www.linkedin.com/company/tpfengenharia">
-          <img src='https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true' alt='' width='13' height='13' />
-          ‎
-          ‎ 
-          ‎ 
-        </a>  
-        <a  href="https://www.instagram.com/tpfengenharia">
-          <img src='https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true' alt='' width='14' height='14' />
-        </a>
-      </div>
-      <p class="slogan">Building the world, <b>better</b></p>
-    </div>
-      </td>
-  <td>
-    <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-b.png' alt='' width='95' height='150' />
-  </td>
-</tr>
-</table>
-`;
+    
+  </style>
+    <table>
+      <tr>
+        <td>
+          <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-a.png' alt='' width='154' height='150' />
+        </td>
+        <td class="avatar">${user_info.user_photo ? `<img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" />` : ""}</td>
+        <td ></td>
+    <td></td>
+        <td class="user-info">
+          <h2 style="font-family: 'BRSonoma-Black', Helvetica;">${user_name}</h2>
+          <div style="display:flex;flex-direction:column;line-height:1.5">
+          <a href="mailto:${user_info.email}">${user_info.email}</a>
+            ${user_info.work_phone !== "null" ? `<a href="tel:${user_info.work_phone}">${user_info.work_phone}  ${user_info.work_phone_extension !== "null" ? `ramal - ${user_info.work_phone_extension}` : ""}</a>` : ""}
+            ${user_info.personal_phone !== "null" ? `<a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""} 
+            <a href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>
+            <div style="display:flex;gap:1rem">
+              <a href="https://www.linkedin.com/company/tpfengenharia">
+                <img src='https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true' alt='' width='13' height='13' />
+                ‎
+                ‎ 
+                ‎ 
+              </a>  
+              <a  href="https://www.instagram.com/tpfengenharia">
+                <img src='https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true' alt='' width='14' height='14' />
+              </a>
+            </div>
+            <p class="slogan">Building the world, <b>better</b></p>
+          </div>
+            </td>
+        <td>
+          <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-b.png' alt='' width='95' height='150' />
+        </td>
+      </tr>
+    </table>
+  `;
 
 
 
