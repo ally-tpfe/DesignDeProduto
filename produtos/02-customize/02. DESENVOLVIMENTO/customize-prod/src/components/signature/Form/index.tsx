@@ -101,6 +101,7 @@ export default function SignatureForm() {
             <input
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
+              maxLength={40}
               defaultValue={
                 user.email
                   ? user.email
@@ -115,6 +116,11 @@ export default function SignatureForm() {
                 },
               })}
             />
+            {!user.email && (
+              <p className="mt-1 text-[0.6875rem] font-bold text-[#FF8328]">
+                campo obrigatório*
+              </p>
+            )}
           </div>
         </div>
 
@@ -126,6 +132,8 @@ export default function SignatureForm() {
               id="name"
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
+              maxLength={25}
+              required
               defaultValue={
                 user.fullName
                   ? user.fullName
@@ -140,6 +148,11 @@ export default function SignatureForm() {
                 },
               })}
             />
+            {!user.fullName && (
+              <p className="mt-1 text-[0.6875rem] font-bold text-[#FF8328]">
+                campo obrigatório*
+              </p>
+            )}
           </div>
           <div className="flex flex-col">
             <div className="flex gap-4">
@@ -218,6 +231,11 @@ export default function SignatureForm() {
                     </DropdownMenu.Item>
                   </DropdownMenu.Content>
                 </DropdownMenu.Root>
+                {!user.workPhone && (
+                  <p className="mt-1 text-[0.6875rem] font-bold text-[#FF8328]">
+                    campo obrigatório*
+                  </p>
+                )}
               </div>
               <div className="">
                 <div className=" flex flex-col">
@@ -250,14 +268,11 @@ export default function SignatureForm() {
                       addUser({ ...user, personalPhone: e.target.value })
                     }}
                   >
-                    {(inputProps) => (
-                      <input
-                        {...inputProps}
-                        className="ml-16 flex h-[2rem] w-[8rem] items-center rounded-md bg-[#002F62] px-2 text-sm text-white placeholder-[#126ad2]  shadow-sm outline-none placeholder:text-[0.8rem] placeholder:font-semibold"
-                        type="text"
-                        placeholder="(81) 98972.9005"
-                      />
-                    )}
+                    <input
+                      className="ml-16 flex h-[2rem] w-[8rem] items-center rounded-md bg-[#002F62] px-2 text-sm text-white placeholder-[#126ad2]  shadow-sm outline-none placeholder:text-[0.8rem] placeholder:font-semibold"
+                      type="text"
+                      placeholder="(81) 98972.9005"
+                    />
                   </InputMask>
                 </div>
               </div>

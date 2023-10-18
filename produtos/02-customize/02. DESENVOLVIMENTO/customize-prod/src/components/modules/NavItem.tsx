@@ -17,7 +17,7 @@ export default function NavItem({
       href={href}
       className={
         active
-          ? `flex h-10 w-full items-center justify-center gap-2 bg-[#003270] text-center text-white`
+          ? `flex h-10 w-full items-center justify-center gap-2 text-center text-white`
           : `flex h-10 w-full cursor-pointer items-center justify-center gap-2 text-center text-[#01397E]`
       }
     >
