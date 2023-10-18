@@ -66,10 +66,10 @@ function get_template_A_str(user_info) {
     <td></td>
         <td class="user-info">
           <h2 style="font-family: 'BRSonoma-Black', Helvetica;">${to_uppercase(user_info.name)}</h2>
-          <div>  
+          <div style="display:flex;flex-direction:column;">
           <a href="mailto:${user_info.email}">${user_info.email}</a> <br />
-            ${user_info.work_phone !== "null" ? `<a href="tel:${user_info.work_phone}">${user_info.work_phone}  ${user_info.work_phone_extension !== "null" ? `ramal - ${user_info.work_phone_extension}` : ""}</a>` : ""}<br />
-            ${user_info.personal_phone !== "null" ? `<a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""}<br />
+            ${user_info.work_phone !== "null" ? `<a href="tel:${user_info.work_phone}">${user_info.work_phone}  ${user_info.work_phone_extension !== "null" ? `ramal - ${user_info.work_phone_extension}` : ""}</a>` : ""}
+            ${user_info.personal_phone !== "null" ? `<a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""} 
             <a href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>⠀
             <br />
               <a href="https://www.linkedin.com/company/tpfengenharia">
