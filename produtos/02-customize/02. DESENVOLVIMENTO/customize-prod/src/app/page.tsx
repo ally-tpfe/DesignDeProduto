@@ -11,7 +11,6 @@ import { useUserContext } from '@/contexts/UserContext'
 import { useEffect } from 'react'
 import { getUserPhoto } from '@/utils/getPhoto'
 import { WindowsLogo } from '@phosphor-icons/react'
-import { set } from 'zod'
 
 export default function Home() {
   const { user, addUser } = useUserContext()
