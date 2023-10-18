@@ -9,6 +9,8 @@ import * as z from 'zod'
 import { useForm } from 'react-hook-form'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { useMsal } from '@azure/msal-react'
+import { zodResolver } from '@hookform/resolvers/zod'
+import InputMask from 'react-input-mask'
 
 const userSchema = z.object({
   name: z
@@ -23,13 +25,12 @@ const userSchema = z.object({
     }),
   personal_phone: z
     .string()
-    .min(15, { message: 'Por favor, insira um telefone válido.' }),
-  work_phone: z
-    .string()
-    .min(15, { message: 'Por favor, insira um telefone válido.' }),
+    .max(15, { message: 'Por favor, insira um telefone válido.' }),
+  work_phone: z.string().max(15),
   work_phone_extension: z
     .string()
     .min(4, { message: 'Por favor, insira 4 caracteres.' })
+    .max(4, { message: 'Por favor, insira 4 caracteres.' })
     .optional(),
   usePhoto: z.boolean().default(true),
 })
@@ -37,7 +38,9 @@ const userSchema = z.object({
 type userSchema = z.infer<typeof userSchema>
 
 export default function SignatureForm() {
-  const { register, watch, handleSubmit, formState } = useForm<userSchema>()
+  const { register, watch, handleSubmit, formState } = useForm<userSchema>({
+    resolver: zodResolver(userSchema),
+  })
   const { user, addUser } = useUserContext()
   const { accounts } = useMsal()
 
@@ -140,7 +143,7 @@ export default function SignatureForm() {
           </div>
           <div className="flex flex-col">
             <div className="flex gap-4">
-              <p className="text-[0.925rem] text-white">Telefone Escritório</p>
+              <p className="text-[0.925rem] text-white">Telefone Escritório*</p>
               <p className="ml-6 text-[0.925rem] text-white">Ramal</p>
               <p className="ml-[4.5rem] text-[0.925rem] text-white">
                 Telefone Pessoal
@@ -222,9 +225,16 @@ export default function SignatureForm() {
                     className="flex h-[2rem] w-[3.875rem] items-center rounded-e-md bg-[#002F62] px-2 text-sm text-white placeholder-[#126ad2]  shadow-sm outline-none placeholder:text-[0.8rem] placeholder:font-semibold"
                     type="text"
                     placeholder="Ex:.1010"
-                    defaultValue={user.workPhoneExtension}
+                    maxLength={4}
+                    pattern="\d{4}"
+                    defaultValue={
+                      user.workPhoneExtension ? user.workPhoneExtension : ''
+                    }
                     {...register('work_phone_extension', {
                       onChange: (e) => {
+                        if (e.target.value.length > 4) {
+                          e.target.value = e.target.value.slice(0, 4)
+                        }
                         addUser({ ...user, workPhoneExtension: e.target.value })
                       },
                     })}
@@ -233,17 +243,22 @@ export default function SignatureForm() {
               </div>
               <div className="">
                 <div className=" flex flex-col">
-                  <input
-                    className="ml-16 flex h-[2rem] w-[8rem] items-center rounded-md bg-[#002F62] px-2 text-sm text-white placeholder-[#126ad2]  shadow-sm outline-none placeholder:text-[0.8rem] placeholder:font-semibold"
-                    type="text"
-                    placeholder="(81) 98972.9005"
+                  <InputMask
+                    mask="(99) 99999.9999"
                     defaultValue={user.personalPhone}
-                    {...register('personal_phone', {
-                      onChange: (e) => {
-                        addUser({ ...user, personalPhone: e.target.value })
-                      },
-                    })}
-                  />
+                    onChange={(e) => {
+                      addUser({ ...user, personalPhone: e.target.value })
+                    }}
+                  >
+                    {(inputProps) => (
+                      <input
+                        {...inputProps}
+                        className="ml-16 flex h-[2rem] w-[8rem] items-center rounded-md bg-[#002F62] px-2 text-sm text-white placeholder-[#126ad2]  shadow-sm outline-none placeholder:text-[0.8rem] placeholder:font-semibold"
+                        type="text"
+                        placeholder="(81) 98972.9005"
+                      />
+                    )}
+                  </InputMask>
                 </div>
               </div>
             </div>
