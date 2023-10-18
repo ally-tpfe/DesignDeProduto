@@ -14,7 +14,7 @@ import { WindowsLogo } from '@phosphor-icons/react'
 import { set } from 'zod'
 
 export default function Home() {
-  const { addUser } = useUserContext()
+  const { user, addUser } = useUserContext()
   const router = useRouter()
   const { instance, accounts } = useMsal()
 
@@ -26,6 +26,17 @@ export default function Home() {
   useEffect(() => {
     if (accounts[0]) {
       setTimeout(() => {
+        addUser({
+          ...user,
+          email: accounts[0].username as string,
+          firstName: accounts[0].name?.split(' ')[0] as string,
+          fullName: accounts[0].name as string,
+          usePhoto: true,
+          userPhoto: '',
+          personalPhone: '',
+          workPhone: '',
+          workPhoneExtension: '',
+        })
         router.push('/start')
       }, 2000)
     }
