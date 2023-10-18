@@ -40,6 +40,7 @@ function get_template_A_str(user_info) {
       font-weight: 400;
       line-height: normal;
       letter-spacing: 0.096px;
+      text-decoration: none;
     }
 
     .slogan{
