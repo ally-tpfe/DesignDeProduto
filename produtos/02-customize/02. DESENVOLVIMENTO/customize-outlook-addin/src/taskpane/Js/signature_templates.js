@@ -61,7 +61,9 @@ function get_template_A_str(user_info) {
         <td>
           <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-a.png' alt='' width='154' height='150' />
         </td>
-        <td class="avatar">${user_info.user_photo ? `<img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" />` : ""}</td>
+        ${user_info.user_photo ? 
+          `<td class="avatar"><img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" /> </td>`
+         : ""}
         <td ></td>
     <td></td>
         <td class="user-info">
