@@ -74,7 +74,7 @@ function get_template_A_str(user_info) {
             <br />
               <a href="https://www.linkedin.com/company/tpfengenharia">
                 <img src='https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true' alt='' width='13' height='13' />
-              </a>
+              </a> 
               <a  href="https://www.instagram.com/tpfengenharia">
                 <img src='https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true' alt='' width='14' height='14' />
               </a>
