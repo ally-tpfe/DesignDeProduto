@@ -16,7 +16,7 @@ export default function App() {
       className="flex h-full w-full flex-col items-center justify-center gap-12 px-32 py-16 "
     >
       <Image src={LogoCompletaCustomize} alt="" width={96} height={96} />
-      <div className="flex h-24 w-96 items-center justify-center rounded-2xl bg-white bg-opacity-0 p-2 shadow-customize-title-card-shadow backdrop-blur-md">
+      <div className="flex h-16 w-96 items-center justify-center rounded-2xl bg-white bg-opacity-0 p-2 shadow-customize-title-card-shadow backdrop-blur-md">
         <h1 className="text-[1.85rem] font-bold text-white">
           O que deseja criar?
         </h1>

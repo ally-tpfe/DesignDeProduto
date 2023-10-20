@@ -28,7 +28,7 @@ export default function Signature() {
               height={340}
             />
           </div>
-          <div className="flex h-full w-[16rem] flex-1 flex-col justify-center gap-2 p-2 ">
+          <div className="flex h-full min-h-full w-[16rem] flex-1 flex-col justify-center gap-2 p-2 ">
             <h1
               className={`${poppins.variable} mt-2 text-base font-bold text-[#0067FF]`}
             >
@@ -59,12 +59,14 @@ export default function Signature() {
               </span>
               <div className={`${poppins.variable} flex gap-2`}>
                 <a
+                  title="Instagram da TPF Engenharia"
                   href="https://www.instagram.com/tpfengenharia/"
                   className="text-sm text-[#003B75]"
                 >
                   <Image src={InstagramLogo} alt="" width={16} height={16} />
                 </a>
                 <a
+                  title="Linkedin da TPF Engenharia"
                   href="https://www.linkedin.com/company/tpfengenharia/mycompany/"
                   className="text-sm text-[#003B75]"
                 >
@@ -111,12 +113,14 @@ export default function Signature() {
               </span>
               <div className={`${poppins.variable} flex gap-2`}>
                 <a
+                  title="Instagram da TPF Engenharia"
                   href="https://www.instagram.com/tpfengenharia/"
                   className="text-sm text-[#003B75]"
                 >
                   <Image src={InstagramLogo} alt="" width={16} height={16} />
                 </a>
                 <a
+                  title="Linkedin da TPF Engenharia"
                   href="https://www.linkedin.com/company/tpfengenharia/mycompany/"
                   className="text-sm text-[#003B75]"
                 >

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import NavItem from './NavItem'
-import { PencilSimpleLine, UserRectangle } from '@phosphor-icons/react'
+import { PencilSimpleLine } from '@phosphor-icons/react'
 import { usePathname } from 'next/navigation'
 
 export default function Nav() {

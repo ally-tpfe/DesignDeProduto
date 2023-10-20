@@ -6,21 +6,14 @@ import AnimacaoAutenticacao from '@/assets/animacaoAutenticacao.svg'
 import BackgroundLogin from '@/assets/fundo-login.png'
 import MicrosoftLogo from '@/assets/microsoft.png'
 import { useMsal } from '@azure/msal-react'
-import { useRouter } from 'next/navigation'
 import { useUserContext } from '@/contexts/UserContext'
 import { useEffect } from 'react'
-import { getUserPhoto } from '@/utils/getPhoto'
-import { WindowsLogo } from '@phosphor-icons/react'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
   const { user, addUser } = useUserContext()
-  const router = useRouter()
   const { instance, accounts } = useMsal()
-
-  const request = {
-    scopes: ['User.ReadBasic.All'],
-    account: accounts[0],
-  }
+  const router = useRouter()
 
   useEffect(() => {
     if (accounts[0]) {
@@ -67,7 +60,7 @@ export default function Home() {
             className="h-screen w-screen object-fill"
           />
         </div>
-        <div className="flex h-full w-full flex-col items-center justify-center gap-8">
+        <div className="flex h-screen w-full flex-col items-center justify-center gap-8">
           <Image src={LogoCompleta} alt="" />
           <div className="flex h-44 w-96 flex-col items-center justify-center gap-6 rounded-[1.25rem] bg-customize-signature-form-background shadow-customize-signature-form-shadow">
             <h1 className="text-2xl font-bold text-white">Seja bem vindo!</h1>
@@ -98,7 +91,7 @@ export default function Home() {
             className="h-screen w-screen object-cover"
           />
         </div>
-        <div className="flex h-full w-full items-center justify-center">
+        <div className="flex h-screen w-full items-center justify-center">
           <Image src={LogoCompleta} alt="" />
         </div>
       </>

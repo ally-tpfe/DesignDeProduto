@@ -16,7 +16,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full w-full">
-      <body className="h-full w-full bg-customize-background-azul">
+      <body className="h-screen w-full bg-customize-background-azul">
         <Msal>
           <UserContextProvider>
             <BackgroundProvider>{children}</BackgroundProvider>

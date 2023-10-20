@@ -1,7 +1,7 @@
 'use client'
 /* eslint-disable no-use-before-define */
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 import { CaretDown, Check, Share } from '@phosphor-icons/react'
 import { useUserContext } from '@/contexts/UserContext'
@@ -38,7 +38,7 @@ const userSchema = z.object({
 type userSchema = z.infer<typeof userSchema>
 
 export default function SignatureForm() {
-  const { register, watch, handleSubmit, formState } = useForm<userSchema>({
+  const { register } = useForm<userSchema>({
     resolver: zodResolver(userSchema),
   })
   const { user, addUser } = useUserContext()
@@ -271,7 +271,7 @@ export default function SignatureForm() {
                     <input
                       className="ml-16 flex h-[2rem] w-[8rem] items-center rounded-md bg-[#002F62] px-2 text-sm text-white placeholder-[#126ad2]  shadow-sm outline-none placeholder:text-[0.8rem] placeholder:font-semibold"
                       type="text"
-                      placeholder="(81) 98972.9005"
+                      placeholder="(__) _____.____"
                     />
                   </InputMask>
                 </div>

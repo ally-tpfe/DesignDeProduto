@@ -6,6 +6,7 @@ import HomeBackground from '@/assets/homeBackground.svg'
 import { useBackground } from '@/contexts/BackgroundContext'
 
 import BackgroundAnimado from '@/assets/animacaoAutenticacao.svg'
+import ScreenHeightRenderer from '@/components/modules/ScreenHeightRenderer'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -36,8 +37,8 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       )}
 
-      <div className="flex h-full w-full items-center justify-center overflow-hidden">
-        {children}
+      <div className="flex h-screen w-full items-center justify-center overflow-hidden">
+        <ScreenHeightRenderer>{children}</ScreenHeightRenderer>
       </div>
     </>
   )

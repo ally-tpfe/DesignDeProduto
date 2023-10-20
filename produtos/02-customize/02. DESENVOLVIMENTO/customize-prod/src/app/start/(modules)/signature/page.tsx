@@ -17,7 +17,6 @@ import { useRouter } from 'next/navigation'
 import { useUserContext } from '@/contexts/UserContext'
 import { useMsal } from '@azure/msal-react'
 import { uploadUserPhotoToS3 } from '@/utils/getPhoto'
-import { msalConfig } from '@/services/msal'
 
 export default function StartApp() {
   const { setBackgroundState } = useBackground()
@@ -47,39 +46,6 @@ export default function StartApp() {
     const request = {
       scopes: ['User.ReadBasic.All'],
       account: accounts[0],
-    }
-    const handleLogin = async () => {
-      instance
-        .initialize()
-        .catch((e) => {
-          console.log(e)
-        })
-        .then(() => {
-          instance
-            .loginRedirect(msalConfig.auth)
-            .catch((e) => {
-              console.log(e)
-            })
-            .finally(() => {
-              instance.acquireTokenSilent(request).then((response) => {
-                const accessToken = response.accessToken as string
-                const photo = async () => await uploadUserPhotoToS3(accessToken)
-                addUser({
-                  firstName: accounts[0].name?.split(' ')[0] as string,
-                  email: accounts[0]?.username as string,
-                  fullName: accounts[0]?.name as string,
-                  usePhoto: true,
-                  userPhoto: '',
-                  accessToken,
-                  personalPhone: '',
-                  workPhone: '',
-                  workPhoneExtension: '',
-                })
-              })
-              console.log(user)
-              router.push('/start/signature')
-            })
-        })
     }
 
     if (accounts[0]) {
@@ -302,7 +268,20 @@ export default function StartApp() {
         formElement.removeEventListener('click', handleClick)
       }
     }
-  }, [])
+  }, [
+    AnimateOutlookLogo,
+    accounts,
+    addUser,
+    buttonsControl,
+    controls,
+    instance,
+    router,
+    signature,
+    signatureControl,
+    successMessage,
+    titleControl,
+    user,
+  ])
 
   async function handleSendUserData(data: {
     email: string
@@ -376,14 +355,14 @@ export default function StartApp() {
         className="flex h-full w-[57rem] items-center justify-center gap-6 "
         animate={signatureControl}
       >
-        <div className="flex h-[calc(100%-2rem)] w-[46rem] items-center justify-between rounded-2xl bg-white">
+        <div className="z-50 flex h-[calc(100%-2rem)] w-[46rem] items-center justify-between rounded-2xl bg-white">
           <Image
             src={singarutreSideA}
             alt=""
             className="mx-0 mr-auto h-full rounded-s-2xl bg-white object-fill p-0"
             height={215}
           />
-          <div className="top-0 flex max-w-[56rem] items-center justify-evenly gap-2 rounded-2xl">
+          <div className="top-0 flex min-h-[15rem] max-w-[56rem] items-center justify-evenly gap-2 rounded-2xl">
             <Signature />
           </div>
           <Image
@@ -437,6 +416,7 @@ export default function StartApp() {
         animate={successMessage}
         className="fixed bottom-0 left-0 right-0 top-[40%] -z-50 m-auto flex flex-col items-center gap-4 opacity-0 transition-all"
       >
+        {/* Que tal por o elemento da logo do outlook aqui? */}
         <h1 className="text-3xl font-bold text-white">Tudo certo! ❤️</h1>
         <div className="flex h-[12rem] w-[25rem] items-center justify-center rounded-2xl bg-customize-signature-form-background p-3 text-center text-white shadow-customize-card-finish-shadow backdrop-blur-[20px]">
           <h1 className="text-lg">
@@ -445,6 +425,7 @@ export default function StartApp() {
           </h1>
         </div>
         <button
+          title="Fechar aviso"
           type="button"
           onClick={() => window.location.reload()}
           id="afterFinishButton"
