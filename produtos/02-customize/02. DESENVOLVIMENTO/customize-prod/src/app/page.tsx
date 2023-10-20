@@ -63,7 +63,7 @@ export default function Home() {
         <div className="flex h-screen w-full flex-col items-center justify-center gap-8">
           <Image src={LogoCompleta} alt="" />
           <div className="flex h-44 w-96 flex-col items-center justify-center gap-6 rounded-[1.25rem] bg-customize-signature-form-background shadow-customize-signature-form-shadow">
-            <h1 className="text-2xl font-bold text-white">Seja bem vindo!</h1>
+            <h1 className="text-2xl font-bold text-white">Seja bem-vindo!</h1>
             <button
               type="button"
               onClick={initializeSignIn}
