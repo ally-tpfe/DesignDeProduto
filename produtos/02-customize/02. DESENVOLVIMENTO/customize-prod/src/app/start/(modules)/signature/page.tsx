@@ -17,6 +17,7 @@ import { useRouter } from 'next/navigation'
 import { useUserContext } from '@/contexts/UserContext'
 import { useMsal } from '@azure/msal-react'
 import { uploadUserPhotoToS3 } from '@/utils/getPhoto'
+import { msalConfig } from '@/services/msal'
 
 export default function StartApp() {
   const { setBackgroundState } = useBackground()
@@ -46,6 +47,39 @@ export default function StartApp() {
     const request = {
       scopes: ['User.ReadBasic.All'],
       account: accounts[0],
+    }
+    const handleLogin = async () => {
+      instance
+        .initialize()
+        .catch((e) => {
+          console.log(e)
+        })
+        .then(() => {
+          instance
+            .loginRedirect(msalConfig.auth)
+            .catch((e) => {
+              console.log(e)
+            })
+            .finally(() => {
+              instance.acquireTokenSilent(request).then((response) => {
+                const accessToken = response.accessToken as string
+                const photo = async () => await uploadUserPhotoToS3(accessToken)
+                addUser({
+                  firstName: accounts[0].name?.split(' ')[0] as string,
+                  email: accounts[0]?.username as string,
+                  fullName: accounts[0]?.name as string,
+                  usePhoto: true,
+                  userPhoto: '',
+                  accessToken,
+                  personalPhone: '',
+                  workPhone: '',
+                  workPhoneExtension: '',
+                })
+              })
+              console.log(user)
+              router.push('/start/signature')
+            })
+        })
     }
 
     if (accounts[0]) {
@@ -268,20 +302,7 @@ export default function StartApp() {
         formElement.removeEventListener('click', handleClick)
       }
     }
-  }, [
-    AnimateOutlookLogo,
-    accounts,
-    addUser,
-    buttonsControl,
-    controls,
-    instance,
-    router,
-    signature,
-    signatureControl,
-    successMessage,
-    titleControl,
-    user,
-  ])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleSendUserData(data: {
     email: string

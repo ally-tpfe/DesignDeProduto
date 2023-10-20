@@ -152,7 +152,7 @@ export default function Sidebar({ children }: SidebarProps) {
             <div className="mt-auto flex h-2/3 w-full flex-col items-center justify-end  rounded-b-2xl rounded-tr-2xl bg-customize-sidebar-background shadow-customize-sidebar-finish-shadow">
               <div className="flex h-full w-[60%]  items-end">
                 <a
-                  href="/support"
+                  href="/start/support"
                   className="mt-auto flex h-10 w-[60%] items-center gap-2 text-[#002f62]"
                 >
                   <Question /> Ajuda
