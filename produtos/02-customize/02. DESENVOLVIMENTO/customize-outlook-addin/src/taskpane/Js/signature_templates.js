@@ -70,7 +70,7 @@ function get_template_A_str(user_info) {
     `<td class="avatar"><img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" /> </td>`
    : ""}
    <td valign="center" width="180" style="line-height: 1;">
-   <h2 style="color: #0067FF; font-size: 12px; font-weight: 800; margin-bottom: 4px; font-family: 'Poppins', sans-serif;">${to_uppercase(user_info.name)}</h2>
+   <h2 style="color: #0067FF; font-size: 12px; font-weight: 800; margin-bottom: 1px; font-family: 'Poppins', sans-serif;">${to_uppercase(user_info.name)}</h2>
    <a href="mailto:${user_info.email}" style="color: #003B75; font-size: 11px; text-decoration: none; font-weight: 400; font-family: 'Poppins', sans-serif; margin: 0;">${user_info.email}</a>
    ${user_info.work_phone !== "null" ? `<br><a style="font-family: 'Poppins', sans-serif; margin: 0;" href="tel:${user_info.work_phone}">${user_info.work_phone} ${user_info.work_phone_extension !== "null" ? `ramal - ${user_info.work_phone_extension}` : ""}</a>` : ""}
    ${user_info.personal_phone !== "null" ? `<br><a href="tel:${user_info.personal_phone}" style="margin: 0;">${user_info.personal_phone}</a>` : ""}
