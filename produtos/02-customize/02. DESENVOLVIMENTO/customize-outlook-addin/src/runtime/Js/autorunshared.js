@@ -230,44 +230,47 @@ function get_template_A_info(user_info) {
 
   
 </style>
-<table>
+<br/>
+<br/>
+<br/>
+<br/>
+<table cellpadding="0" cellspacing="0" border="0" resize="none">
 <tr>
-  <td>
-    <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-a.png' alt='' width='154' height='150' />
+  <td width="154" valign="top">
+    <img src="https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-a.png" alt="" width="154" height="150">
   </td>
   ${user_info.user_photo !== "null" ? 
-    `<td class="avatar"><img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" /> </td>`
-   : ""}
-  <td ></td>
-<td></td>
-  <td class="user-info">
-    <h2 style="font-family: 'BRSonoma-Black', Helvetica;">${user_name}</h2>
-    <div style="display:flex;flex-direction:column;line-height:1.5">
-    <a href="mailto:${user_info.email}">${user_info.email}</a>
-      ${user_info.work_phone !== "null" ? `<a href="tel:${user_info.work_phone}">${user_info.work_phone}  ${user_info.work_phone_extension !== "null" ? `ramal - ${user_info.work_phone_extension}` : ""}</a>` : ""}
-      ${user_info.personal_phone !== "null" ? `<a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""} 
-      <a href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>
-      <div style="display:flex;gap:1rem">
-        <a href="https://www.linkedin.com/company/tpfengenharia">
-          <img src='https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true' alt='' width='13' height='13' />
-          ‎
-          ‎ 
-          ‎ 
-        </a>  
-        <a  href="https://www.instagram.com/tpfengenharia">
-          <img src='https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true' alt='' width='14' height='14' />
+  `<td class="avatar"><img style="border-radius:50%;" src="${user_info.user_photo}" alt="" width="120" height="120" /> </td>`
+ : ""}
+  <td valign="center">
+    <h2 style="color: #0067FF; font-size: 12px; font-weight: 800; margin-bottom: 4px;font-family: 'Poppins', sans-serif;">${to_uppercase(user_info.name)}</h2>
+    <a href="mailto:${user_info.email}" style="color: #003B75; font-size: 11px; text-decoration: none; font-weight: 400;font-family:'Poppins', sans-serif; margin-bottom: 2px;">${user_info.email}</a>
+    ${user_info.work_phone !== "null" ? `<br><a style="font-family: 'Poppins', sans-serif;" href="tel:${user_info.work_phone}">${user_info.work_phone} ${user_info.work_phone_extension !== "null" ? `ramal - ${user_info.work_phone_extension}` : ""}</a>` : ""}
+    ${user_info.personal_phone !== "null" ? `<br><a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""}
+    <br><a style="font-family: 'Poppins', sans-serif;text-decoration: none;" href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>
+    <table>
+      <td valign="left">
+        <a  href="https://www.linkedin.com/company/tpfengenharia">
+          <img src="https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true" alt="" width="13" height="13">
         </a>
-      </div>
-      <p class="slogan">Building the world, <b>better</b></p>
-    </div>
       </td>
-  <td>
-    <img src='https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-b.png' alt='' width='95' height='150' />
+      <td>
+        <a href="https://www.instagram.com/tpfengenharia">
+          <img src="https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true" alt="" width="14" height="14">
+        </a>
+      </td>
+    </table>
+    
+    <p style="color: #0067FF; font-size: 11px; font-weight: 400; margin-top: 10px;">Building the world, <b>better.</b></p>
+  </td>
+  <td></td>
+  <td></td>
+  <td width="95" valign="top">
+    <img src="https://raw.githubusercontent.com/ally-tpfe/customize-assets/main/side-b.png" alt="" width="95" height="150">
   </td>
 </tr>
 </table>
 `;
-
 
 
 
