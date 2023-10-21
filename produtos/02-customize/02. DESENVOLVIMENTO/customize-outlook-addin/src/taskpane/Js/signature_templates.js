@@ -87,7 +87,7 @@ function get_template_A_str(user_info) {
        </a>
      </td>
    </table>
-   <p style="color: #0067FF; font-size: 13px; font-weight: 400; margin: 1px;">Building the world, <b>better.</b></p>
+   <p style="color: #0067FF; font-size: 13px; font-weight: 400; margin-top: 3px;">Building the world, <b>better.</b></p>
  </td>
  
  

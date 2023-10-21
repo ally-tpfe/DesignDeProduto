@@ -261,7 +261,7 @@ function get_template_A_info(user_info) {
       </td>
     </table>
     
-    <p style="color: #0067FF; font-size: 11px; font-weight: 400; margin-top: 10px;">Building the world, <b>better.</b></p>
+    <p style="color: #0067FF; font-size: 11px; font-weight: 400; margin-top: 3px;">Building the world, <b>better.</b></p>
   </td>
   <td></td>
   <td></td>
