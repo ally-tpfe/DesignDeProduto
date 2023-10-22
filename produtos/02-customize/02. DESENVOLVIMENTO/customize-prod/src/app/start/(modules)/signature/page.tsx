@@ -12,6 +12,7 @@ import { ArrowLeft, Share } from '@phosphor-icons/react'
 import { useBackground } from '@/contexts/BackgroundContext'
 
 import OutlookLogo from '@/assets/artefacts/outlook.svg'
+import Tutorial from '@/assets/tutorial.svg'
 import X from '@/assets/artefacts/XButton.svg'
 import { useRouter } from 'next/navigation'
 import { useUserContext } from '@/contexts/UserContext'
@@ -238,7 +239,7 @@ export default function StartApp() {
         transition: { duration: 0.1 },
       }).then(() => {
         AnimateOutlookLogo.start({
-          translateY: '465%',
+          translateY: '650%',
           scale: 1.3,
           transition: { duration: 0.5 },
         })
@@ -267,12 +268,13 @@ export default function StartApp() {
               .then(() => {
                 AnimateOutlookLogo.start({
                   scale: 1.1,
-                  translateY: '325%',
+                  translateY: '365%',
+                  zIndex: 9999,
                 })
               })
               .then(() => {
                 successMessage.start({
-                  zIndex: 9999,
+                  zIndex: 9888,
                   opacity: 1,
                   transition: { duration: 2.5 },
                 })
@@ -351,12 +353,6 @@ export default function StartApp() {
       transition={{ duration: 0.2 }}
     >
       <motion.div
-        className="fixed left-[45%] top-[-10rem] z-50 -translate-x-[50%] transform"
-        animate={AnimateOutlookLogo}
-      >
-        <Image src={OutlookLogo} alt="" />
-      </motion.div>
-      <motion.div
         animate={titleControl}
         className="h-18 fixed flex w-[42rem] items-center justify-center rounded-2xl bg-white bg-opacity-0 p-2 opacity-0 shadow-customize-title-card-shadow backdrop-blur-md 2xl:left-[30%] 2xl:top-[10%]"
       >
@@ -434,16 +430,31 @@ export default function StartApp() {
         </motion.button>
       </div>
       <motion.div
-        animate={successMessage}
-        className="fixed bottom-0 left-0 right-0 top-[40%] -z-50 m-auto flex flex-col items-center gap-4 opacity-0 transition-all"
+        animate={AnimateOutlookLogo}
+        className="opacity-1 fixed -top-[20rem] left-[45%] flex translate-x-[-50%] flex-col items-center justify-center gap-4 transition-all "
       >
-        {/* Que tal por o elemento da logo do outlook aqui? */}
-        <h1 className="text-3xl font-bold text-white">Tudo certo! ❤️</h1>
-        <div className="flex h-[12rem] w-[25rem] items-center justify-center rounded-2xl bg-customize-signature-form-background p-3 text-center text-white shadow-customize-card-finish-shadow backdrop-blur-[20px]">
-          <h1 className="text-lg">
-            Acesse o outlook, crie um novo e-mail e abra o plugin localizado na
-            barra superior para ativar a sua assinatura agora mesmo!
-          </h1>
+        <Image src={OutlookLogo} alt="" className="z-[9999px]" />
+      </motion.div>
+      <motion.div
+        animate={successMessage}
+        className="fixed left-1/2 top-1/2 -z-50  flex translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-center gap-4 opacity-0 transition-all max-[1560px]:top-3/4 max-[1560px]:h-[35rem] max-[1560px]:w-[35rem] max-[1560px]:translate-y-[-70%]"
+      >
+        <div className="flex h-[25rem] w-[58rem] justify-center rounded-2xl bg-customize-signature-form-background p-3  px-8 py-8 text-center text-white shadow-customize-card-finish-shadow backdrop-blur-[20px]  lg:h-[35rem] lg:w-[58rem]">
+          <Image
+            src={Tutorial}
+            alt=""
+            className="h-[500px] w-[620px] rounded-2xl max-[1560px]:h-[450px] max-[1560px]:w-[640px]"
+          />
+          <div className="flex h-full flex-col items-start justify-start gap-4 px-10">
+            <h1 className="font-sans text-3xl font-bold text-white">
+              Tudo certo! ❤️
+            </h1>
+            <h1 className="text-left text-lg">
+              Acesse o <b>outlook</b> e siga <b>todos esses passos</b> para
+              habilitar corretamente sua assinatura. Feche este tutorial{' '}
+              <b>somente após concluir o processo.</b>
+            </h1>
+          </div>
         </div>
         <button
           title="Fechar aviso"
