@@ -249,19 +249,18 @@ function get_template_A_info(user_info) {
     ${user_info.personal_phone !== "null" ? `<br><a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""}
     <br><a style="font-family: 'Poppins', sans-serif;text-decoration: none;" href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>
     <table>
-      <td valign="left">
-        <a  href="https://www.linkedin.com/company/tpfengenharia">
-          <img src="https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true" alt="" width="13" height="13">
-        </a>
-      </td>
-      <td>
-        <a href="https://www.instagram.com/tpfengenharia">
-          <img src="https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true" alt="" width="14" height="14">
-        </a>
-      </td>
-    </table>
-    
-    <p style="color: #0067FF; font-size: 11px; font-weight: 400; margin-top: 3px;">Building the world, <b>better.</b></p>
+     <td valign="top">
+       <a href="https://www.linkedin.com/company/tpfengenharia" target="_blank">
+         <img src="https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true" alt="" width="13" height="13">
+       </a>
+     </td>
+     <td>
+       <a href="https://www.instagram.com/tpfengenharia" target="_blank">
+         <img src="https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true" alt="" width="14" height="14">
+       </a>
+     </td>
+   </table>
+   <p style="color: #0067FF; font-size: 13px; font-weight: 400; margin-top: 3px;">Building the world, <b>better.</b></p>
   </td>
   <td></td>
   <td></td>
