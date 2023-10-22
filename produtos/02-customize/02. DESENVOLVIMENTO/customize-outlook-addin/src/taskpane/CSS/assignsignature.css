@@ -232,6 +232,7 @@
     width: 100%;
     display: none;
     text-align: center;
+    font-size: 13px;
   }
 
   #hard_reset_button{
