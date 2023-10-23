@@ -317,7 +317,6 @@ export default function StartApp() {
     apiKey?: string
     work_phone_extension: string
   }) {
-    uploadPhoto()
     const userData = {
       email: data.email,
       name: data.name,
