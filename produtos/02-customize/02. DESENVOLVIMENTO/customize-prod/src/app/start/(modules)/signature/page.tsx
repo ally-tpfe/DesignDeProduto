@@ -12,7 +12,7 @@ import { ArrowLeft, Share } from '@phosphor-icons/react'
 import { useBackground } from '@/contexts/BackgroundContext'
 
 import OutlookLogo from '@/assets/artefacts/outlook.svg'
-import Tutorial from '@/assets/tutorial.svg'
+import Tutorial from '@/assets/tutorial.gif'
 import X from '@/assets/artefacts/XButton.svg'
 import { useRouter } from 'next/navigation'
 import { useUserContext } from '@/contexts/UserContext'
@@ -431,7 +431,7 @@ export default function StartApp() {
       </div>
       <motion.div
         animate={AnimateOutlookLogo}
-        className="opacity-1 fixed -top-[20rem] left-[45%] flex translate-x-[-50%] flex-col items-center justify-center gap-4 transition-all "
+        className="opacity-1 fixed -top-[20rem] left-[45%] flex translate-x-[-50%] flex-col items-center justify-center gap-4 transition-all"
       >
         <Image src={OutlookLogo} alt="" className="z-[9999px]" />
       </motion.div>
