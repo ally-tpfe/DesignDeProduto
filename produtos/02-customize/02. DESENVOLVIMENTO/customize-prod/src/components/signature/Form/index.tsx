@@ -287,7 +287,8 @@ export default function SignatureForm() {
             localStorage.setItem('tpf-customize@user', JSON.stringify(user))
           }}
           id="concluir"
-          className=" flex h-[2rem] w-[7.21894rem] items-center justify-center gap-2 rounded-md bg-[#0067FF] font-bold text-white opacity-90 hover:opacity-100"
+          className="flex h-[2rem] w-[7.21894rem] items-center justify-center gap-2 rounded-md bg-[#0067FF] font-bold text-white opacity-90 hover:opacity-100 disabled:cursor-not-allowed disabled:bg-slate-500"
+          disabled={!user.workPhone}
         >
           <Share /> Concluir
         </button>

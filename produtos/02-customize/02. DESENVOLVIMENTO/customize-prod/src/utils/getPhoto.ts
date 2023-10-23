@@ -8,8 +8,8 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const access_key = 'AKIAVDH6WIRPE5L4Y2FC'
-const secret_access_key = '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'
+const access_key = 'AKIAXAJYGJAYKGL6X7EP'
+const secret_access_key = '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'
 
 const s3 = new S3Client({
   credentials: {
@@ -76,16 +76,16 @@ export async function uploadUserPhotoToS3(accessToken: string) {
     const randomID = uuidv4()
 
     const params = {
-      Bucket: 'customize-photo',
+      Bucket: 'customize-tpfe',
       Key: `user-${randomID}.jpg`,
-      Body: roundedBuffer, // Usar o buffer arredondado
+      Body: roundedBuffer,
       ContentType: 'image/jpeg',
     }
 
     const command = new PutObjectCommand(params)
     await s3.send(command)
 
-    const photoUrl = `https://customize-photo.s3.sa-east-1.amazonaws.com/user-${randomID}.jpg`
+    const photoUrl = `https://customize-tpfe.s3.sa-east-1.amazonaws.com/user-${randomID}.jpg`
     return photoUrl
   } catch (error) {
     console.error(`Failed to get user photo: ${error}`)
@@ -93,7 +93,6 @@ export async function uploadUserPhotoToS3(accessToken: string) {
   }
 }
 
-// Função para arredondar a imagem
 async function roundImage(buffer: Buffer) {
   return new Promise<Buffer>((resolve, reject) => {
     const img = new Image()

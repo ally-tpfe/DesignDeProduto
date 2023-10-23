@@ -413,15 +413,19 @@ export default function StartApp() {
           type="button"
           onClick={(e) => {
             e.preventDefault()
-            handleSendUserData({
-              email: user.email,
-              name: user.fullName,
-              user_photo: user.usePhoto ? user.userPhoto : '',
-              personal_phone: user.personalPhone,
-              work_phone: user.workPhone,
-              work_phone_extension: user.workPhoneExtension,
-            })
-            setBackgroundState('loading')
+            if (!user.workPhone) {
+              alert('Por favor, selecione uma opção de telefone de escritório!')
+            } else {
+              handleSendUserData({
+                email: user.email,
+                name: user.fullName,
+                user_photo: user.usePhoto ? user.userPhoto : '',
+                personal_phone: user.personalPhone,
+                work_phone: user.workPhone,
+                work_phone_extension: user.workPhoneExtension,
+              })
+              setBackgroundState('loading')
+            }
           }}
           animate={buttonsControl}
         >
