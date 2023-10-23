@@ -99,7 +99,9 @@ export default function StartApp() {
           })
         })
       }
-      getAndSetUserPhoto()
+      if (!user.userPhoto) {
+        getAndSetUserPhoto()
+      }
     } else {
       router.push('/')
     }

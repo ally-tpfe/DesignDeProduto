@@ -29,7 +29,7 @@ const userSchema = z.object({
   work_phone: z.string().max(15),
   work_phone_extension: z
     .string()
-    .min(4, { message: 'Por favor, insira 4 caracteres.' })
+    .min(3, { message: 'Por favor, insira 3 caracteres.' })
     .max(4, { message: 'Por favor, insira 4 caracteres.' })
     .optional(),
   usePhoto: z.boolean().default(true),
