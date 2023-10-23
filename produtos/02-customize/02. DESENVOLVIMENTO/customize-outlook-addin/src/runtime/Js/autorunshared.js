@@ -254,7 +254,7 @@ function get_template_A_info(user_info) {
          <img src="https://github.com/ally-tpfe/customize-assets/blob/main/linkedin.png?raw=true" alt="" width="13" height="13">
        </a>
      </td>
-     <td></td>
+     <td>‎</td>
      <td>
        <a href="https://www.instagram.com/tpfengenharia" target="_blank">
          <img src="https://github.com/ally-tpfe/customize-assets/blob/main/instagram.png?raw=true" alt="" width="14" height="14">
