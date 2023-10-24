@@ -111,11 +111,7 @@ export default function SignatureForm() {
                   : ''
               }
               placeholder="nome.sobrenome@tpfe.com.br"
-              {...register('email', {
-                onChange: (e) => {
-                  addUser({ ...user, email: e.target.value })
-                },
-              })}
+              {...register('email')}
             />
             {!user.email && (
               <p className="mt-1 text-[0.6875rem] font-bold text-[#FF8328]">
