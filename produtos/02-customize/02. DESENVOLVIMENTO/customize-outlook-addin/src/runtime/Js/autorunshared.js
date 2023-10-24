@@ -247,7 +247,7 @@ function get_template_A_info(user_info) {
     <a href="mailto:${user_info.email}" style="color: #003B75; font-size: 11px; text-decoration: none; font-weight: 400;font-family:'Poppins', sans-serif; margin-bottom: 2px;">${user_info.email}</a>
     ${user_info.work_phone !== "null" ? `<br><a style="font-family: 'Poppins', sans-serif;" href="tel:${user_info.work_phone}">${user_info.work_phone} ${user_info.work_phone_extension !== "null" ? `ramal - ${user_info.work_phone_extension}` : ""}</a>` : ""}
     ${user_info.personal_phone !== "null" ? `<br><a href="tel:${user_info.personal_phone}">${user_info.personal_phone}</a>` : ""}
-    <br><a style="font-family: 'Poppins', sans-serif;text-decoration: none;" href="https://www.tpfengenharia.com">www.tpfengenharia.com.br</a>
+    <br><a style="font-family: 'Poppins', sans-serif;text-decoration: none;" target="_blank" href="https://www.tpfengenharia.com.br">www.tpfengenharia.com.br</a>
     <table>
      <td valign="top">
        <a href="https://www.linkedin.com/company/tpfengenharia" target="_blank">
