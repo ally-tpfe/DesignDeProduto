@@ -102,7 +102,8 @@ export default function SignatureForm() {
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
               maxLength={40}
-              defaultValue={
+              required
+              value={
                 user.email
                   ? user.email
                   : accounts[0]?.username
@@ -225,9 +226,24 @@ export default function SignatureForm() {
                           JSON.stringify(user),
                         )
                       }}
-                      className="flex h-10 w-full items-center justify-start rounded-b-md border-b-[0.15px] border-[#126ad2] bg-[#002f62] pl-4 outline-none transition-all hover:cursor-pointer hover:bg-[#003d7e] hover:text-[0.925rem] hover:text-[#499bff]"
+                      className="flex h-10 w-full items-center justify-start rounded-t-md border-b-[0.15px] border-[#126ad2] bg-[#002f62] pl-4 outline-none transition-all hover:cursor-pointer hover:bg-[#003d7e] hover:text-[0.925rem] hover:text-[#499bff]"
                     >
                       São Paulo
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item
+                      onClick={() => {
+                        addUser({
+                          ...user,
+                          workPhone: '(31) 3508.8395',
+                        })
+                        localStorage.setItem(
+                          'tpf-customize@user',
+                          JSON.stringify(user),
+                        )
+                      }}
+                      className="flex h-10 w-full items-center justify-start rounded-b-md border-b-[0.15px] border-[#126ad2] bg-[#002f62] pl-4 outline-none transition-all hover:cursor-pointer hover:bg-[#003d7e] hover:text-[0.925rem] hover:text-[#499bff]"
+                    >
+                      Minas Gerais
                     </DropdownMenu.Item>
                   </DropdownMenu.Content>
                 </DropdownMenu.Root>
