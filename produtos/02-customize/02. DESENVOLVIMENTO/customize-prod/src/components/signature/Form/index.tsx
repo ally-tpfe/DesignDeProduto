@@ -156,7 +156,7 @@ export default function SignatureForm() {
               <p className="text-[0.925rem] text-white">Telefone Escritório*</p>
               <p className="ml-6 text-[0.925rem] text-white">Ramal</p>
               <p className="ml-[4.5rem] text-[0.925rem] text-white">
-                Telefone Pessoal
+                Telefone Opcional
               </p>
             </div>
             <div className="mt-1 flex h-auto w-[20rem] items-start gap-[0.0625rem] text-white">
