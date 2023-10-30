@@ -223,21 +223,6 @@ export default function SignatureForm() {
                     >
                       São Paulo
                     </DropdownMenu.Item>
-                    <DropdownMenu.Item
-                      onClick={() => {
-                        addUser({
-                          ...user,
-                          workPhone: '(31) 3508.8395',
-                        })
-                        localStorage.setItem(
-                          'tpf-customize@user',
-                          JSON.stringify(user),
-                        )
-                      }}
-                      className="flex h-10 w-full items-center justify-start rounded-b-md border-b-[0.15px] border-[#126ad2] bg-[#002f62] pl-4 outline-none transition-all hover:cursor-pointer hover:bg-[#003d7e] hover:text-[0.925rem] hover:text-[#499bff]"
-                    >
-                      Minas Gerais
-                    </DropdownMenu.Item>
                   </DropdownMenu.Content>
                 </DropdownMenu.Root>
                 {!user.workPhone && (
