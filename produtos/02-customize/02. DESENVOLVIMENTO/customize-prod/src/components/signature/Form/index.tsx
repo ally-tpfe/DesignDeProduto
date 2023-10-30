@@ -50,11 +50,9 @@ export default function SignatureForm() {
         Painel de edição
       </h1>
       <div className="grid h-full w-full grid-cols-2 pt-7">
-        {/* LADO A */}
-
         <div className="flex flex-col gap-9">
           <div className="flex flex-col items-start ">
-            <label className="text-white">
+            <label className="text-[0.875rem] text-white">
               Usar foto de perfil do teams na assinatura?
             </label>
             <RadioGroup.Root
@@ -97,7 +95,7 @@ export default function SignatureForm() {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-white">E-mail*</label>
+            <label className="text-[0.875rem] text-white">E-mail*</label>
             <input
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
               type="text"
@@ -122,9 +120,8 @@ export default function SignatureForm() {
         </div>
 
         <div className="flex flex-col gap-9">
-          {/* LADO B */}
           <div className="flex flex-col">
-            <label className="text-white">Nome*</label>
+            <label className="text-[0.875rem] text-white">Nome*</label>
             <input
               id="name"
               className="mt-2 h-[2rem] w-[19.625rem] rounded-lg  bg-[#002F62] px-3 text-sm text-white placeholder-gray-500 shadow-sm outline-none"
@@ -153,9 +150,9 @@ export default function SignatureForm() {
           </div>
           <div className="flex flex-col">
             <div className="flex gap-4">
-              <p className="text-[0.925rem] text-white">Telefone Escritório*</p>
-              <p className="ml-6 text-[0.925rem] text-white">Ramal</p>
-              <p className="ml-[4.5rem] text-[0.925rem] text-white">
+              <p className="text-[0.875rem] text-white">Telefone Escritório*</p>
+              <p className="ml-6 text-[0.875rem] text-white">Ramal</p>
+              <p className="ml-[4.5rem] text-[0.875rem] text-white">
                 Telefone Opcional
               </p>
             </div>
