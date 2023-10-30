@@ -219,7 +219,7 @@ export default function SignatureForm() {
                           JSON.stringify(user),
                         )
                       }}
-                      className="flex h-10 w-full items-center justify-start rounded-t-md border-b-[0.15px] border-[#126ad2] bg-[#002f62] pl-4 outline-none transition-all hover:cursor-pointer hover:bg-[#003d7e] hover:text-[0.925rem] hover:text-[#499bff]"
+                      className="flex h-10 w-full items-center justify-start rounded-b-md   bg-[#002f62] pl-4 outline-none transition-all hover:cursor-pointer hover:bg-[#003d7e] hover:text-[0.925rem] hover:text-[#499bff]"
                     >
                       São Paulo
                     </DropdownMenu.Item>
