@@ -12,6 +12,12 @@
 
   }
 
+  .admin-btn{
+    background:transparent;
+    color: transparent;
+    border: none;
+  }
+
   .container-taskp{
     display:flex;
     flex-direction: column;
