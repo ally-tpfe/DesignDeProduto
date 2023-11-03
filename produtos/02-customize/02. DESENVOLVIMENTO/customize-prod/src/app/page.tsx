@@ -18,16 +18,21 @@ export default function Home() {
   useEffect(() => {
     if (accounts[0]) {
       setTimeout(() => {
-        addUser({
-          ...user,
-          email: accounts[0].username as string,
-          firstName: accounts[0].name?.split(' ')[0] as string,
-          fullName: accounts[0].name as string,
-          usePhoto: true,
-          userPhoto: '',
-          personalPhone: '',
-          workPhone: '',
-          workPhoneExtension: '',
+        instance.acquireTokenSilent({
+          account: accounts[0],
+          scopes:['User.Read', 'User.ReadWrite.All'],
+        }).then((res) => {
+          addUser({
+            email: accounts[0].username as string,
+            firstName: accounts[0].name?.split(' ')[0] as string,
+            fullName: accounts[0].name as string,
+            accessToken: res.accessToken as string,
+            usePhoto: true,
+            userPhoto: '',
+            personalPhone: '',
+            workPhone: '',
+            workPhoneExtension: '',
+          })
         })
         router.push('/start')
       }, 2000)
@@ -35,9 +40,9 @@ export default function Home() {
   })
 
   const initializeSignIn = () => {
-    instance.loginPopup().then((res) => {
+    instance.loginRedirect().then((res) => {
       addUser({
-        accessToken: res.accessToken as string,
+        ...user,
         email: accounts[0].username as string,
         firstName: accounts[0].name?.split(' ')[0] as string,
         fullName: accounts[0].name as string,
