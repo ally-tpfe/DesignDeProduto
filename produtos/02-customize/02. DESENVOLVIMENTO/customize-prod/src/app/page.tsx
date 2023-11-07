@@ -23,15 +23,12 @@ export default function Home() {
           scopes:['User.Read', 'User.ReadWrite.All'],
         }).then((res) => {
           addUser({
+            ...user,
             email: accounts[0].username as string,
             firstName: accounts[0].name?.split(' ')[0] as string,
             fullName: accounts[0].name as string,
             accessToken: res.accessToken as string,
             usePhoto: true,
-            userPhoto: '',
-            personalPhone: '',
-            workPhone: '',
-            workPhoneExtension: '',
           })
         })
         router.push('/start')
@@ -47,10 +44,6 @@ export default function Home() {
         firstName: accounts[0].name?.split(' ')[0] as string,
         fullName: accounts[0].name as string,
         usePhoto: true,
-        userPhoto: '',
-        personalPhone: '',
-        workPhone: '',
-        workPhoneExtension: '',
       })
     })
   }
